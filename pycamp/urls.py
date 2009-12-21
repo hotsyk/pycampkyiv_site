@@ -7,7 +7,7 @@ from django.views.generic.simple import direct_to_template
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^', include('faststart.app.urls')),
+    (r'^', include('pycamp.core.urls')),
 
     #admin
     (r'^admin/(.*)$', admin.site.root),

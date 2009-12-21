@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
 from django.views.decorators.cache import cache_page
 
-from faststart.app.models import *
+from pycamp.core.models import *
 
 def view1(request):
 
@@ -14,5 +14,5 @@ def view1(request):
     context.update({
         'var1': "",
     })
-    return render_to_response('app/appbase.html', context)
+    return render_to_response('core/appbase.html', context)
 

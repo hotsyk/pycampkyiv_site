@@ -2,7 +2,7 @@
 # (C) , 2008
 ##### copy this file to Makefile.def and set BASE path to you own project directory
 
-app=faststart
+app=pycamp
 proj=$(app)
 ver=$(shell cat .version)
 

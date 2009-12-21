@@ -35,11 +35,11 @@ TEMPLATE_DEBUG = False
 
 # Email settings
 # Please, set up proper email settings in ``settings_local.py`` file
-DEFAULT_FROM_EMAIL = 'mail@localhost'
+DEFAULT_FROM_EMAIL = 'do-not-reply@pycamp.org.ua'
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
-SERVER_EMAIL = 'root@localhost'
+SERVER_EMAIL = 'gotsyk@gmail.com'
 
 import time
 TIME_ZONE = time.tzname[0]
@@ -52,15 +52,15 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.sessions',
     'django.contrib.sites',
-	'admin_wmdeditor',
-	'debug_toolbar',
-	'django_extensions',
-	'django_markup',
-	'mailer',
-	'south',
-	'tagging',
-		
-    'faststart.app',
+    'admin_wmdeditor',
+    'debug_toolbar',
+    'django_extensions',
+    'django_markup',
+    'mailer',
+    'south',
+    'tagging',
+
+    'pycamp.core',
 
 )
 
@@ -93,7 +93,7 @@ TEMPLATE_DIRS = (
 )
 
 # Other **Django** related settings
-ROOT_URLCONF = 'faststart.urls'
+ROOT_URLCONF = 'pycamp.urls'
 SITE_ID = 1
 
 # **Registration** settings
