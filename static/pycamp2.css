@@ -1,0 +1,1282 @@
+/* GENERAL ----------------------------------------------------*/
+
+body {
+  margin: 0;
+  padding: 0;
+    background-color: #fff;
+    font-family: Verdana,sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+
+a:link {
+  color: #3671a1;
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+  border: 0;
+    padding: 0;
+}
+
+a:visited {
+  color: #3671a1;
+}
+
+a:hover {
+  color: #5caae1;
+}
+
+p {
+    font-size: 16px;
+    color: #232323;
+    font-family: georgia, times, "times new roman";
+    line-height: 1.3em;
+    margin: 0 0 15px 0;
+}
+
+strong {
+    color: #000;
+}
+
+span.highlight {
+  background-color: #ffcc00;
+  color: #000;
+  padding: 2px;
+  margin: 5px 0;
+}
+
+span.red {
+    color: #990000;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    letter-spacing: -1px;
+    font-family: helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+div.clear {
+  clear: both;
+}
+
+div.pullquote {
+  font-family: Georgia;
+  color: #3399cc;
+  font-size: 36px;
+  text-align: left;
+  padding: 0 15px;
+  margin: -7px 0 30px 0;
+}
+
+/* STATEMENT --------------------------------------------------*/
+
+div.statement {
+    text-align: center;
+    width: 100%;
+    margin: 5px 0 15px 0;
+}
+
+body.home div.left div.statement {
+    width: 710px;
+}
+
+div.statement h2 {
+    margin: 0;
+    font-family: georgia, helvetica, arial, sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    color: #444;
+}
+
+div.statement a {
+    font-weight: bold;
+}
+
+/* STRUCTURE --------------------------------------------------*/
+
+div.container {
+  width: 950px;
+  margin: 0 auto;
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+div.site_header div.container {
+    background-color: transparent;
+}
+
+div.links div.container {
+    background-color: #333;
+}
+
+div.content {
+    width: 950px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+div.leftcolumn {
+  width: 455px;
+  padding: 0 15px 15px 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  float: left;
+    text-align: left;
+}
+
+div.rightcolumn {
+  width: 455px;
+  padding: 0 0 15px 15px;
+  float: left;
+    text-align: left;
+}
+
+div.rightcolumneven {
+  width: 435px;
+  padding-left: 0px;
+  float: right;
+    text-align: left;
+}
+
+div.leftcolumneven {
+  width: 435px;
+  padding-right: 0px;
+  float: left;
+    text-align: left;
+}
+
+/* HEADERS ----------------------------------------------------*/
+
+div.site_header {
+  background-color: #222;
+  /* border-top: 2px solid #c00;*/
+    border-bottom: 1px solid #d3e7f4;
+  padding: 0 26px;
+}
+
+div.site_header a {
+    color: #fff;
+}
+
+div.site_header div.inner {
+  padding: 15px 0;
+    font-size: 12px;
+}
+
+div.site_header div.inner img {
+    margin-top: 3px;
+}
+
+div.site_header div.inner {
+  color: #666;
+    text-align: left;
+}
+
+div.site_header div.logo_37signals img {
+  width: 110px;
+  height: 24px;
+}
+
+div.logo_37signals {
+  margin-top: 14px;
+  float: right;
+  width: 110px;
+}
+
+div.header {
+    text-align: left;
+}
+
+div.header h1 {
+    text-align: left;
+    font-size: 44px;
+    font-family: helvetica, arial, sans-serif;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+div.header h2 {
+    text-align: left;
+    font-size: 20px;
+    font-family: helvetica, arial, sans-serif;
+    margin: 0 0 30px 0;
+    color: #555;
+}
+
+
+/* SHADOWBOX --------------------------------------------------*/
+
+div.feature div.shadow {
+  background: url(/images/background_shadow.png) no-repeat bottom right;
+  padding: 0 7px 7px 0;
+}
+
+div.feature div.inner {
+  overflow: hidden;
+  background: #fff;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 8px;
+    text-align: left;
+}
+
+div.feature div.inner img {
+    margin-bottom: 3px;
+}
+
+div.feature div.inner a {
+  color: #333;
+  text-decoration: none;
+}
+
+div.feature div.inner a:hover {
+  text-decoration: underline;
+}
+
+div.small_features {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+div.small_features div.feature {
+  float: left;
+  width: 230px;
+}
+
+div.feature {
+  margin: 0 10px 11px 0;
+}
+
+div.small_features div.end {
+    margin-right: 0;
+}
+
+div.feature div.container {
+  width: 656px;
+  background-color: #efefef;
+  padding: 10px 15px 20px 15px;
+  font-size: 11px;
+  text-align: left;
+}
+
+div.feature h3 {
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 7px 0 0 0;
+    color: #fff;
+}
+
+div.feature p {
+  text-align: center;
+  color: #000;
+}
+
+div.feature h1 {
+  font-family: times;
+  color: #000;
+  font-weight: bold;
+  font-size: 3.8em;
+  text-align: center;
+  margin: 5px 0 5px 0;
+}
+
+div.feature h2 {
+    color: #999;
+    font-size: 12px;
+    margin: 2px 0 0 0;
+    padding: 0;
+    font-weight: normal;
+    text-align: center;
+}
+
+div.feature h3 {
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 7px 0 0 0;
+    color: #222;
+}
+
+div.feature h3 span.category {
+  color: #c00;
+}
+
+div.feature h4 {
+    margin: 1px 0 0 0;
+    padding: 0;
+    font-size: 10px;
+    font-weight: normal;
+    color: #555;
+    line-height: 1em;
+}
+
+div.feature h5 {
+    font-family: Georgia;
+  color: #222;
+  font-size: 14px;
+  margin: 5px 0;
+  font-weight: normal;
+}
+
+/* MASTHEAD ---------------------------------------------------*/
+
+div.masthead {
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+    text-align: center;
+    width: 100%;
+}
+
+div.masthead h1 {
+  font-family: helvetica, arial sans-serif;
+  font-size: 46px;
+  font-weight: bold;
+  color: #000;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+div.masthead h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+    color: #444;
+    font-family: helvetica, arial, sans-serif;
+    letter-spacing: 0;
+}
+
+div.top {
+    margin: 0 auto 30px auto;
+    padding: 20px 0 0 0;
+    width: 100%;
+    background-color: #ead7be;
+    border-bottom: 1px solid #dadfcb;
+    background-image: url(images/texture.png);
+}
+
+div.main_feature {
+  width: 950px;
+    margin: 0 auto 0 auto;
+    position: relative;
+}
+
+/* TOUR -------------------------------------------------------*/
+
+
+div.subnav {
+  margin: 30px 0 0 0;
+  font-size: 16px;
+  font-family: Georgia;
+  color: #ccc;
+}
+
+div.subnav span {
+  font-weight: bold;
+  color: #222;
+}
+
+div.steps {
+  border-top: 1px solid #adc8db;
+  border-bottom: 1px solid #adc8db;
+  margin-top: 50px;
+  padding: 30px;
+}
+
+div.steps h1 {
+  font-family: helvetica, arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+div.tourshot {
+    margin: 35px auto;
+    border-bottom: 2px solid #666;
+}
+
+div.tourshot img, object, embed {
+    border: none;
+    margin-bottom: 35px;
+}
+
+div.tourshot h2 {
+    margin: 5px 0;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 20px;
+}
+
+div#flashcontent {
+  margin: 0;
+}
+
+a.tourhead {
+  color: #333; text-decoration: none;
+}
+
+h1.back {
+  margin: 30px 0 50px 0;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 20px;
+}
+
+/* BUZZ -------------------------------------------------------*/
+
+body.buzz div.small_features {
+    margin-bottom: 20px;
+}
+
+body.buzz div.rightcolumn {
+  width: 470px;
+  padding: 0 0 15px 0;
+  float: left;
+    text-align: left;
+}
+
+/* WHY --------------------------------------------------------*/
+
+body.why div.leftcolumnwide {
+  width: 650px;
+  padding: 0;
+  float: left;
+  margin-bottom: 30px;
+    text-align: left;
+}
+
+body.why div.leftcolumn {
+  width: 530px;
+  padding: 0 15px 15px 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  float: left;
+    text-align: left;
+}
+
+body.why div.rightcolumn {
+  width: 380px;
+  padding: 0 0 15px 15px;
+  float: left;
+    text-align: left;
+}
+
+body.why div.leftcolumn h2 {
+  color: black;
+  font-size: 16px;
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  line-height: 1.3em;
+  margin: 0px;
+}
+
+body.why div.point {
+  margin: 30px 0;
+}
+
+div.scenario {
+  background-image: url(/images/background_scenario.png);
+  background-repeat: no-repeat;
+  width: 345px;
+  padding: 20px;
+}
+
+div.browsers {
+  background-image: url(/images/background_browsers.png);
+}
+
+div.scenario h3 {
+  font-family: helvetica, arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+}
+
+div.scenario ul {
+  list-style-image: url(/images/icon_check.png);
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+  line-height: 1.2em
+}
+
+div.scenario li {
+  margin-bottom: 25px;
+}
+
+/* CASE STUDY -------------------------------------------------*/
+
+body.casestudies div.imgcontainer {
+  width: 480px;
+  float: right;
+  margin-left: 30px;
+}
+
+body.casestudies div.article {
+  margin: 0 0 30px 0;
+}
+
+div.video {
+  margin: 0;
+}
+
+blockquote {
+    color: #454545;
+    margin: 20px 0;
+    background:transparent url(http://www.37signals.com/svn/images/blockquote.gif) no-repeat scroll 0pt 2px;
+    padding-left: 23px;
+    line-height: 1.4em;
+    font-size: 16px;
+    font-family: georgia;
+}
+
+body.casestudy div.content {
+  text-align: left;
+}
+
+/* EXTRA ------------------------------------------------------*/
+
+div.extra {
+  background-color: #efefef;
+  padding: 20px;
+  margin: 30px 0 50px 0;
+    clear: both;
+    text-align: left;
+}
+
+div.extra h1 {
+  color: #444;
+    text-align: left;
+  margin: 0 0 20px 0;
+    clear: both;
+}
+
+div.extra h3 {
+  margin: 0 0 2px 0;
+    padding: 0;
+    font-family: Helvetica,Arial,Verdana,sans-serif;
+    font-size: 1.4em;
+    line-height: 1.2em;
+    color: #000;
+}
+
+div.fullcolumn {
+  width: 100%;
+  clear: both;
+    text-align: left;
+}
+
+div.leftcolumnwide {
+  width: 650px;
+  padding: 0;
+  float: left;
+  margin-bottom: 30px;
+    text-align: left;
+}
+
+div.leftcolumnwide h3 {
+    color: black;
+    font-family: Helvetica,Arial,Verdana,sans-serif;
+    font-size: 1.3em;
+    margin: 0 0 5px 0;
+}
+
+div.rightcolumnnarrow {
+  width: 256px;
+  margin-right: -15px;
+  padding-top: 0;
+  float: right;
+  margin-bottom: 30px;
+}
+
+div.quote {
+  padding: 0 15px 20px 0;
+}
+
+div.quote h3 {
+  color: black;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  margin: 0;
+}
+
+div.quote p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* PITCH ------------------------------------------------------*/
+
+div.action {
+  background-color: #80CEFF;
+  padding: 20px;
+  margin: 30px 0;
+    clear: both;
+    overflow: hidden;
+    text-align: center;
+}
+
+div.action h2 {
+    color: #4c95c3;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 26px;
+    margin: 0;
+}
+
+div.action h2 a {
+    color: #174c6d;
+}
+
+div.actionhome {
+    background-color: #3671A1;
+  padding: 16px 0 17px 0;
+  margin: 0;
+    text-align: center;
+    border: 0;
+    color: #D5E9F6;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/* SIGNUP -----------------------------------------------------*/
+
+div.actionsignup {
+  background-color: #3671A1;
+  padding: 15px 0;
+  margin: -30px;
+    text-align: center;
+    border: 0;
+    color: #D5E9F6;
+}
+
+div.actionsignup strong {
+    color: #FFF9DF;
+}
+
+div.rightcolumneven {
+  width: 435px;
+  padding-left: 0px;
+  float: right;
+    text-align: left;
+}
+
+div.leftcolumneven {
+  width: 435px;
+  padding-right: 0px;
+  float: left;
+    text-align: left;
+}
+
+/* HELP -------------------------------------------------------*/
+
+body.help div.content {
+    text-align: left;
+    width: 930px;
+    margin-top: 25px;
+}
+
+body.help div.content h2 {
+    text-align: left;
+    font-size: 24px;
+    font-family: helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+body.help div.content h2 a {
+    color: #000;
+}
+
+body.help ul {
+    margin: 5px 0 25px 0;
+}
+
+body.help li {
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #000;
+}
+
+body.help li.more {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+body.help li.more a {
+    color: #036;
+}
+
+body.help div.content div.top {
+    background-color: #ffc;
+    margin: 20px 0 25px 0;
+    padding: 10px;
+    border-top: 1px solid #f3dba9;
+    border-bottom: 1px solid #f3dba9;
+}
+
+body.help div.content div.top li strong {
+    color: #036;
+}
+
+body.help div.content div.top ul {
+    margin-bottom: 0;
+    padding-left: 30px;
+    width: 800px;
+}
+
+body.help div.content div.top li {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.6em;
+}
+
+body.help div.questions ul {
+    padding: 0 0 0 15px;
+}
+
+body.help div.help_entry {
+    margin-bottom: 40px;
+}
+
+body.help div.help_entry h2 a {
+    color: #900;
+    text-decoration: none;
+    line-height: 1.2em;
+}
+
+body.help div.help_entry img {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 1px;
+}
+
+body.help div.questions h3 a, body.help div.questions h3 {
+    margin-top: 0;
+    color: #000;
+}
+
+body.help div.belt {
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px dotted #666;
+    border-bottom: 1px dotted #666;
+    padding: 10px 0;
+    margin-bottom: 50px;
+    clear: both;
+    background-color: #efefef;
+}
+
+body.help div.belt h2 {
+    font-size: 22px;
+    font-family: helvetica, arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+body.help div.belt p {
+    font-size: 16px;
+}
+
+body.help div.content {
+    margin: 0;
+}
+
+body.support_form div.content h2 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+body.support_form div.content h2 span {
+    color: #393;
+    font-size: 14px;
+    font-style: italic;
+}
+
+body.support_form div.content p {
+    margin-bottom: 5px;
+    width: 775px;
+    font-size: 14px;
+}
+
+body.support_form select {
+    font-size: 16px;
+    padding: 3px;
+}
+
+body.support_form textarea {
+    width: 600px;
+    height: 200px;
+    padding: 3px;
+    font-size: 14px;
+}
+
+body.support_form input {
+    width: 600px;
+    padding: 3px;
+    font-size: 14px;
+}
+
+body.support_form input.button {
+    width: auto;
+    margin-bottom: 20px;
+    font-family: verdana;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+body.support_form hr {
+    margin: 20px 0;
+}
+
+body.support_form div.support_success h1 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+body.support_form div.support_success {
+    width: 600px;
+    margin: 50px auto;
+    text-align: left;
+}
+
+/* FOOTER -----------------------------------------------------*/
+
+div.footer {
+    border-top: 1px solid #000;
+  background-color: #111;
+    padding-top: 20px;
+    color: #ccc;
+    clear: both;
+}
+
+div.footer div.container {
+    background-color: #111;
+}
+
+div.footer div.container div#products {
+    width: 880px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+div.footer div#products h1 {
+    font-size: 20px;
+    letter-spacing: 0;
+    padding-left: 15px;
+    margin: 0 0 1px 0;
+    color: #fff;
+}
+
+div.footer div#products h1 span {
+    color: #333;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+div.footer div#products h2 {
+    font-size: 16px;
+    letter-spacing: 0;
+    font-family: helvetica, arial, sans-serif;
+    margin: 0;
+    color: #80CEFF;
+    font-weight: normal;
+}
+
+div.footer div.product {
+    float: left;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+div.footer div.product img {
+    margin-bottom: 8px;
+}
+
+div.footer div.product a {
+    color: #fff;
+    text-decoration: none;
+}
+
+div.footer div.bar {
+    clear: left;
+    padding-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+div.footer div.bar a, div.footer div.legal a {
+    color: #fff;
+}
+
+div.footer div.legal {
+    margin: 30px auto;
+    margin-bottom: 0;
+    border-top: 1px solid #333;
+    padding: 30px;
+    text-align: center;
+    font-size: 10px;
+    width: 800px;
+    background-color: #111;
+    line-height: 1.4em;
+}
+
+div.footer div.legal img {
+    margin-bottom: 30px;
+}
+
+/* Flash Video Demo */
+#cs_noexpressUpdate {
+    margin: 0 auto;
+    font-family:"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+    font-size: x-small;
+    color: #003300;
+    text-align: left;
+    width: 210px;
+    height: 200px;
+    padding: 40px;
+}
+
+/* SIGNUP BUBBLES */
+
+body.signup .hover_container {
+  position: relative;
+  font-size: 12px;
+  color: #666;
+}
+
+body.signup .hover_container div.bubble {
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+}
+
+body.signup .hover div.bubble {
+  display: block;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+body.signup div.bubble div.wrapper {
+  position: absolute;
+  top: -40px;
+  left: 35px;
+}
+
+body.signup div.bubble div.content {
+  width: 300px;
+  margin: 0;
+  padding: 0 7px 8px 0;
+  background: url(/images/bubble-background.png) no-repeat bottom right;
+  text-align: left;
+  color: #000;
+  white-space: normal;
+  letter-spacing: normal;
+}
+
+body.signup div.bubble div.content div.arrow {
+  position: absolute;
+  top: 18px;
+  left: -47px;
+  width: 50px;
+  height: 40px;
+  background: url(/images/bubble-arrow.png) no-repeat top left;
+}
+
+body.signup div.bubble div.content div.inner {
+  padding: 15px;
+  background: url(/images/bubble-background.gif) no-repeat top left;
+}
+
+body.signup div.bubble div.content div.inner h2 {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  border: none;
+  margin: 0;
+}
+
+body.signup div.bubble div.content div.inner p {
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+body.signup3 a.hover_target {
+  color: #000;
+    font-size: 14px;
+}
+
+body.signup4 a.hover_target {
+  text-decoration: none;
+  border-bottom: 1px dotted #888;
+  margin-left: 6px;
+  color: #64503f;
+}
+
+body.signup4 .hover_container {
+  position: absolute;
+  margin: 18px 0 0 5px;
+}
+
+/* LEGAL ----------------------------------------------------*/
+
+body.legal {
+    font-family: georgia, times;
+    text-align: left;
+    padding: 20px;
+    width: 800px;
+}
+
+body.legal h1 {
+    font-family: helvetica, arial, sans-serif;
+    color: #000;
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+body.legal h2 {
+    font-family: helvetica, arial, sans-serif;
+    color: #000;
+    font-size: 20px;
+}
+
+body.legal li {
+    font-size: 16px;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* SIGNUP4 ----------------------------------------------------*/
+
+body.signup4 div.masthead h2 strong {
+    color: #000;
+}
+
+body.signup4 div.jacket {
+    height: 360px;
+    margin: 0 auto;
+    font-family: helvetica, arial, sans-serif;
+}
+
+body.signup4 div.short {
+    width: 160px;
+    height: 270px;
+    border: 1px solid #999;
+    float: left;
+    margin-top: 22px;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+body.signup4 div.tall {
+    width: 200px;
+    height: 310px;
+    border: 3px solid #3671A1;
+    float: left;
+    text-align: center;
+    padding: 8px 10px 10px 10px;
+    background-color: #fff9df;
+}
+
+body.signup4 div.no-r {
+    border-right: 0;
+}
+
+body.signup4 div.r-shadow {
+    background-image: url(images/shadow-right.png);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+body.signup4 div.no-l {
+    border-left: 0;
+}
+
+body.signup4 div.l-shadow {
+    background-image: url(images/shadow-left.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+body.signup4 div.short h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 34px;
+}
+
+body.signup4 div.short h1, body.signup4 div.short h1 a, div.short h2 {
+    color: #333;
+    text-decoration: none;
+}
+
+body.signup4 div.tall h1, body.signup4 div.tall h1 a {
+    margin: 0;
+    padding: 0;
+    font-size: 42px;
+    color: #000;
+    line-height: 1em;
+    text-decoration: none;
+}
+
+body.signup4 div.short h2 {
+    margin: 0 0 2px 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+body.signup4 div.tall h2 {
+    margin: 0 0 2px 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: normal;
+    color: #000;
+}
+
+body.signup4 div.short h3 {
+    margin: 0 0 15px 0;
+    padding: 0 0 7px 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    font-family: helvetica, arial, sans-serif;
+    color: #73a1c7;
+}
+
+body.signup4 div.tall h3 {
+    margin: 0;
+    padding: 0 0 4px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    color: #4582b5;
+}
+
+body.signup4 div.short li, body.signup4 div.tall li {
+    font-size: 14px;
+    color: #64503f;
+}
+
+body.signup4 div.tall li {
+    font-size: 16px;
+}
+
+body.signup4 div.tall ul, body.signup4 div.short ul {
+    list-style: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+body.signup4 div.tall ul.highlight, div.short ul.highlight {
+    margin-top: 0;
+}
+
+body.signup4 div.tall ul.highlight li, div.short ul.highlight li {
+    list-style: none;
+    margin-bottom: 3px;
+    font-size: 20px;
+    line-height: 1em;
+}
+
+body.signup4 div.tall li strong, body.signup4 div.short li strong {
+    color: #c33700;
+}
+
+body.signup4 div.tall ul.highlight li {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+body.signup4 div.tall img {
+    margin: 1px 0 4px 0;
+}
+
+body.signup4 div.tall small {
+    color: #C33700;
+    font-size: 12px;
+}
+
+body.signup4 div.under_chart_left, body.signup4 div.under_chart_right {
+    width: 362px;
+    position: relative;
+    top: -44px;
+    font-size: 11px;
+    float: left;
+}
+
+body.signup4 div.under_chart_right {
+    float: right;
+}
+
+/* DIM ZUM ----------------------------------------------------*/
+
+div.dim_zum_window {
+  background: #000;
+  padding: 24px;
+  width: 680px;
+}
+
+div.dim_zum_window div.window_content object,
+div.dim_zum_window div.window_content embed {
+  margin: 0;
+}
+
+div.dim_zum_window a {
+  color: #fff;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  vertical-align: bottom;
+}
+
+div.dim_zum_window a:active {
+  color: #666;
+}
+
+div.dim_zum_window div.signup_link,
+div.dim_zum_window div.close {
+  width: 40%;
+  line-height: 32px;
+}
+
+div.dim_zum_window div.signup_link {
+  float: left;
+}
+
+div.dim_zum_window div.close {
+  float: right;
+  text-align: right;
+}
+
+div.dim_zum_window div.close a {
+  font-size: 16px;
+}
+
+div.dim_zum_window div.signup_link a {
+  font-size: 18px;
+}
+
+div.dim_zum_window div.signup_link a {
+  color: #bcfc3d;
+  border-bottom: 1px solid #5c7c1e;
+}
+
+div.dim_zum_window div.controls {
+  overflow: hidden;
+  padding: 18px 25px 0 25px;
+}
