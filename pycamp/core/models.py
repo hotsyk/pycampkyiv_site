@@ -37,14 +37,14 @@ PROPERTY_CHOICES = (
 class SpeakerField(models.Model):
     speaker = models.ForeignKey(Speaker)
     lang = models.SmallIntegerField(_('Language'), choices=LANGUAGE_CHOICES, )
-    property = models.SmallIntegerField(_('Property'), choices=PROPERTY_CHOICES, )
+    property_name = models.SmallIntegerField(_('Property'), choices=PROPERTY_CHOICES, )
     value = models.TextField(_('Value'), blank=True, null=True)
 
     def __unicode__(self):
         return "%s (%s, %s)" % (self.speaker, self.lang, self.property)
 
     class Meta:
-        unique_together = ("speaker", "lang", "property")
+        unique_together = ("speaker", "lang", "property_name")
 
 
 class Presentation(models.Model):
@@ -70,7 +70,7 @@ PRESENTATION_CHOICES = (
 class PresentationField(models.Model):
     presentation = models.ForeignKey(Presentation)
     lang = models.SmallIntegerField(_('Language'), choices=LANGUAGE_CHOICES, )
-    property = models.SmallIntegerField(_('Property'), choices=PRESENTATION_CHOICES, )
+    property_name = models.SmallIntegerField(_('Property'), choices=PRESENTATION_CHOICES, )
     value = models.TextField(_('Value'), blank=True, null=True)
 
 
