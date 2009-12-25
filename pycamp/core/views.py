@@ -45,7 +45,7 @@ def main_page(request):
                 langs += lang_corr
 
     speakers =  []
-    for sp in Speaker.objects.filter(related_speaker=None):
+    for sp in Speaker.objects.filter(related_speaker=None).order_by('pk'):
         sp_fields = SpeakerField.objects.filter(speaker=sp, lang=int(lang)).order_by('property_name')
         try:
             presentation = Presentation.objects.filter(speakers=sp)[0]
