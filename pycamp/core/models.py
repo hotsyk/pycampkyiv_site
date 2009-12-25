@@ -7,11 +7,14 @@ from django.utils.translation import ugettext_lazy as _
 __all__ = ('Speaker',  'SpeakerField', 'Presentation', 'PresentationField', 'HeaderBlock',
     'LANGUAGE_CHOICES')
 
-
 class Speaker (models.Model):
-    user = models.ForeignKey(User)
-    email = models.EmailField()
-    site = models.URLField(blank=True, null=True)
+    user = models.ForeignKey(User, blank=True, null=True)
+    email = models.EmailField(_('Email'),)
+    site = models.URLField(_('Site'), blank=True, null=True)
+    blog = models.URLField(_('Blog'), blank=True, null=True)
+    twitter_name = models.CharField(_('Speaker twitter'), max_length=255, blank=True, null=True)
+    photo = models.ImageField(_('Photo'), upload_to=".", blank=True, null=True)
+    related_speaker = models.ForeignKey('Speaker', blank=True, null=True)
 
     def __unicode__(self):
         return self.user.username
@@ -29,9 +32,11 @@ LANGUAGE_CHOICES = (
 
 
 PROPERTY_CHOICES = (
-    (1, u'Bio'),
+    (1, u'Name'),
     (2, u'Location'),
-    (3, u'Name'),
+    (3, u'Company'),
+    (4, u'Position'),
+    (5, u'Bio'),
     )
 
 class SpeakerField(models.Model):
@@ -41,20 +46,20 @@ class SpeakerField(models.Model):
     value = models.TextField(_('Value'), blank=True, null=True)
 
     def __unicode__(self):
-        return "%s (%s, %s)" % (self.speaker, self.lang, self.property)
+        return "%s (%s, %s)" % (self.speaker, self.lang, self.property_name)
 
-    class Meta:
-        unique_together = ("speaker", "lang", "property_name")
+    #class Meta:
+     #   unique_together = ("speaker", "lang", "property_name")
 
 
 class Presentation(models.Model):
-    speakers = models.ManyToManyField(Speaker)
+    speakers = models.ForeignKey(Speaker, blank=True, null=True)
     time_start = models.TimeField(blank=True, null=True)
     time_end = models.TimeField(blank=True, null=True)
-    file = models.FileField(upload_to='.', blank=True, null=True)
+    file = models.FileField(_('Presentation file'), upload_to='.', blank=True, null=True)
 
-    #def __unicode__(self):
-    #   return self.pk
+    def __unicode__(self):
+       return unicode(self.pk)
 
     def get_absolute_url(self):
         return ""
@@ -78,7 +83,9 @@ class HeaderBlock (models.Model):
     lang = models.SmallIntegerField(_('Language'), choices=LANGUAGE_CHOICES, unique=True )
     text = models.TextField(_('Raw text'), blank=True, null=True)
 
-    #def __unicode__(self):
-     #   return self.lang
+    def __unicode__(self):
+        for l in LANGUAGE_CHOICES:
+            if self.lang == l[0]:
+                return l[1]
 
 

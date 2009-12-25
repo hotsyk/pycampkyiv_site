@@ -24,6 +24,9 @@
         <div class="span-9">
              {% block header %}
                 {{ header.text|safe }}
+            <div class="big_button">
+                <h1></h1>
+            </div>
             {% endblock header %}
         </div>
 
@@ -81,14 +84,33 @@
 
         <div class="span-15 prepend-1 colborder">
 
+            {% comment %}
                 <iframe src="http://spreadsheets.google.com/embeddedform?key=t2cTJROxTvXj-IMiYtbBUzg" width="760" height="765" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
+            {% endcomment %}
 
         </div>
-    <div class="span-7 last">
-            {% comment %}
-            Доповідачі
-            {% endcomment %}
+    <div class="span-23 last">
+            <div class="speakers_block">
+                <h1>{{ speaker_title }}</h1>
+                <p>
+                    {% for speaker in speakers %}
+                        {% if speaker.0.photo %} <img src="{{MEDIA_URL}}{{speaker.0.photo}}"  align="left" hspace="4"/>{% endif %}
+                        {% for field in speaker.1 %}
+                            {{ field.value }} <br />
+                            {% if forloop.first %}
+                                {% if speaker.2 %}
+                                <span style="color:#FFF;">{{ speaker.3 }}</span><br />
+                                {% endif %}
+                            {% endif %}
+
+                        {% endfor %}
+                        {% if speaker.0.blog %} <a href="{{speaker.0.blog}}">{{speaker.0.blog}}</a><br />{% endif %}
+                        {% if speaker.0.site %} <a href="{{speaker.0.site}}">{{speaker.0.site}}</a><br />{% endif %}
+                        {% if speaker.0.twitter %} <a href="{{speaker.0.twitter}}">{{speaker.0.twitter}}</a><br />{% endif %}
+                    <br />
+                    {% endfor %}
+                </p>
+            </div>
         </div>
 
     </div>

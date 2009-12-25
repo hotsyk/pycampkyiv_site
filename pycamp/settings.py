@@ -57,7 +57,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'django_markup',
     'mailer',
-    'south',
+   # 'south',
     'tagging',
 
     'pycamp.core',
