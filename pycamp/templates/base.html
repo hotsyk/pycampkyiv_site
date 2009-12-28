@@ -96,7 +96,7 @@
                     {% for speaker in speakers %}
                         {% if speaker.0.photo %} <img src="{{MEDIA_URL}}{{speaker.0.photo}}"  align="left" hspace="4"/>{% endif %}
                         {% for field in speaker.1 %}
-                            {{ field.value }} <br />
+                            {{ field.value|urlize }} <br />
                             {% if forloop.first %}
                                 {% if speaker.2 %}
                                 <span style="color:#FFF; font-size:18px;font-style:italic;">{{ speaker.3 }}</span><br />
