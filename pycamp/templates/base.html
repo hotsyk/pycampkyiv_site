@@ -94,19 +94,20 @@
                 <h1>{{ speaker_title }}</h1>
                 <p>
                     {% for speaker in speakers %}
-                        {% if speaker.0.photo %} <img src="{{MEDIA_URL}}{{speaker.0.photo}}"  align="left" />{% endif %}
+                        {% if speaker.0.photo %}<div class="speaker_img"><img src="{{MEDIA_URL}}{{speaker.0.photo}}" /></div> {% endif %}
+                        <div class="speaker_desc">
                         {% for field in speaker.1 %}
                             {{ field.value|urlize }} <br />
                             {% if forloop.first %}
+                                {% if speaker.0.twitter_name %} {{speaker.0.twitter_name|safe}}<br />{% endif %}
                                 {% if speaker.2 %}
                                 <span style="color:#FFF; font-size:18px;font-style:italic;">{{ speaker.3 }}</span><br />
                                 {% endif %}
                             {% endif %}
-
                         {% endfor %}
-                        {% if speaker.0.blog %} <a href="{{speaker.0.blog}}">{{speaker.0.blog}}</a><br />{% endif %}
+                        {% if speaker.0.blog %} <a href="{{speaker.0.blog}}">{{speaker.0.blog}}</a>&nbsp;{% endif %}
                         {% if speaker.0.site %} <a href="{{speaker.0.site}}">{{speaker.0.site}}</a><br />{% endif %}
-                        {% if speaker.0.twitter %} <a href="{{speaker.0.twitter}}">{{speaker.0.twitter}}</a><br />{% endif %}
+                        </div>
                     {% endfor %}
                 </p>
             </div>
