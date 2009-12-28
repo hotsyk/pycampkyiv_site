@@ -94,7 +94,7 @@
                 <h1>{{ speaker_title }}</h1>
                 <p>
                     {% for speaker in speakers %}
-                        {% if speaker.0.photo %} <img src="{{MEDIA_URL}}{{speaker.0.photo}}"  align="left" hspace="4"/>{% endif %}
+                        {% if speaker.0.photo %} <img src="{{MEDIA_URL}}{{speaker.0.photo}}"  align="left" />{% endif %}
                         {% for field in speaker.1 %}
                             {{ field.value|urlize }} <br />
                             {% if forloop.first %}
@@ -107,7 +107,6 @@
                         {% if speaker.0.blog %} <a href="{{speaker.0.blog}}">{{speaker.0.blog}}</a><br />{% endif %}
                         {% if speaker.0.site %} <a href="{{speaker.0.site}}">{{speaker.0.site}}</a><br />{% endif %}
                         {% if speaker.0.twitter %} <a href="{{speaker.0.twitter}}">{{speaker.0.twitter}}</a><br />{% endif %}
-                    <br />
                     {% endfor %}
                 </p>
             </div>
