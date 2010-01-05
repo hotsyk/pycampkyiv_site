@@ -1,0 +1,56 @@
+/*
+ * SimpleModal Basic Modal Dialog
+ * http://www.ericmmartin.com/projects/simplemodal/
+ * http://code.google.com/p/simplemodal/
+ *
+ * Copyright (c) 2009 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Revision: $Id: basic.css 213 2009-09-17 04:10:02Z emartin24 $
+ *
+ */
+
+body {height:100%; margin:0;}
+h3 {color:#5f87ae; font-size:1.6em; padding:0; margin:0;}
+#basic-modal-content {display:none;}
+#content1 {display:none;}
+#content2 {display:none;}
+#content3 {display:none;}
+#content4 {display:none;}
+#content5 {display:none;}
+#content6 {display:none;}
+#content7 {display:none;}
+#content8 {display:none;}
+#content9 {display:none;}
+#content10 {display:none;}
+#content11 {display:none;}
+#content12 {display:none;}
+#content13 {display:none;}
+#content14 {display:none;}
+#presentationcontent1 {display:none;}
+#presentationcontent2 {display:none;}
+#presentationcontent3 {display:none;}
+#presentationcontent4 {display:none;}
+#presentationcontent5 {display:none;}
+#presentationcontent6 {display:none;}
+#presentationcontent7 {display:none;}
+#presentationcontent8 {display:none;}
+#presentationcontent9 {display:none;}
+#presentationcontent10 {display:none;}
+#presentationcontent11 {display:none;}
+#presentationcontent12 {display:none;}
+#presentationcontent13 {display:none;}
+#presentationcontent14 {display:none;}
+
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+
+/* Container */
+#simplemodal-container {height:320px; width:500px; color:#bbb; background-color:#333; border:4px solid #444; padding:12px;}
+#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; margin-bottom:12px; padding:4px 6px 6px;}
+#simplemodal-container a {color:#ddd;}
+#simplemodal-container a.modalCloseImg {background:url(/media/img/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#simplemodal-container #basic-modal-content {padding:8px;}

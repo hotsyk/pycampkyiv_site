@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 __all__ = ('Speaker',  'SpeakerField', 'Presentation', 'PresentationField', 'HeaderBlock',
-    'LANGUAGE_CHOICES')
+    'LANGUAGE_CHOICES', 'News')
 
 class Speaker (models.Model):
     user = models.ForeignKey(User, blank=True, null=True)
@@ -15,6 +15,8 @@ class Speaker (models.Model):
     twitter_name = models.CharField(_('Speaker twitter'), max_length=255, blank=True, null=True)
     photo = models.ImageField(_('Photo'), upload_to=".", blank=True, null=True)
     related_speaker = models.ForeignKey('Speaker', blank=True, null=True)
+    order = models.IntegerField(_("Speaker's order"), default=100)
+    special = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.user.username
@@ -89,3 +91,9 @@ class HeaderBlock (models.Model):
                 return l[1]
 
 
+class News(models.Model):
+    lang = models.SmallIntegerField(_('Language'), choices=LANGUAGE_CHOICES)
+    title = models.CharField(max_length=255)
+    text = models.TextField(_('Value'), blank=True, null=True)
+    added = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
