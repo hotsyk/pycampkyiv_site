@@ -1,0 +1,26 @@
+[
+   {
+      "pk": 1, 
+      "model": "core.headerblock", 
+      "fields": {
+         "lang": 3, 
+         "text": "<div class=\"header_block\">\r\n<h1>PyCamp \u041a\u0438\u0457\u0432</h1>\r\n<p>30 \u0441\u0456\u0447\u043d\u044f 2010</p><p>&nbsp;</p>\r\n<p>\u0421\u043b\u0456\u0434\u043a\u0443\u0439\u0442\u0435 \u0437\u0430 \u043d\u0430\u0448\u0438\u043c\u0438 \u0430\u043d\u043e\u043d\u0441\u0430\u043c\u0438 \u0442\u0430 \u0437\u0430 <a href=\"http://twitter.com/ua_python\">@ua_python</a></p>\r\n<p>\u041d\u0430\u0448 \u0445\u0435\u0448-\u0442\u0435\u0433 \u0432 \u0442\u0432\u0456\u0442\u0435\u0440\u0456 <a href=\"http://twitter.com/#search?q=%23pykyiv\">#pykyiv</a></p>\r\n<p>E-mail: <a href=\"mailto:gotsyk+pykyiv@gmail.com\">gotsyk@gmail.com</a></p>\r\n</div>\r\n <p>\u0437\u0430 \u043f\u0456\u0434\u0442\u0440\u0438\u043c\u043a\u0438 <br /><br /><a href=\"http://developers.org.ua\"><img src=\"media/developers.png\" /></a>\r\n    <br /><br />\r\n    <a href=\"http://42coffeecups.com\"><img src=\"media/42-logo.png\" /></a>\r\n    </p>"
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "core.headerblock", 
+      "fields": {
+         "lang": 2, 
+         "text": "<div class=\"header_block\">\r\n<h1>PyCamp \u041a\u0438\u0435\u0432</h1>\r\n<p>30 \u044f\u043d\u0432\u0430\u0440\u044f 2010</p><p>&nbsp;</p>\r\n<p>\u0421\u043b\u0435\u0434\u0438\u0442\u0435 \u0437\u0430 \u043d\u0430\u0448\u0438\u043c\u0438 \u0430\u043d\u043e\u043d\u0441\u0430\u043c\u0438 \u0438 \u0437\u0430 <a href=\"http://twitter.com/ua_python\">@ua_python</a></p>\r\n<p>\u041d\u0430\u0448 \u0445\u0435\u0448-\u0442\u0435\u0433 \u0432 \u0442\u0432\u0438\u0442\u0435\u0440\u0435 <a href=\"http://twitter.com/#search?q=%23pykyiv\">#pykyiv</a></p>\r\n<p>E-mail: <a href=\"mailto:gotsyk+pykyiv@gmail.com\">gotsyk@gmail.com</a></p>\r\n</div>\r\n<p>\u043f\u0440\u0438 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0435 <br /><br /><a href=\"http://developers.org.ua\"><img src=\"media/developers.png\" /></a>\r\n<br /><br />\r\n<a href=\"http://42coffeecups.com\"><img src=\"media/42-logo.png\" /></a>\r\n</p>"
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "core.headerblock", 
+      "fields": {
+         "lang": 1, 
+         "text": "<div class=\"header_block\">\r\n<h1>PyCamp Kyiv</h1>\r\n<p>30.01.2010</p><p>&nbsp;</p>\r\n<p>Follow us on Twitter at <a href=\"http://twitter.com/ua_python\">@ua_python</a>\r\nand by hash tag <a href=\"http://twitter.com/#search?q=%23pykyiv\">#pykyiv</a></p>\r\n<p>E-mail: <a href=\"mailto:gotsyk+pykyiv@gmail.com\">gotsyk@gmail.com</a></p>\r\n</div>\r\n<p>supported by <br /><br /><a href=\"http://developers.org.ua\"><img src=\"media/developers.png\" /></a>\r\n<br /><br />\r\n<a href=\"http://42coffeecups.com\"><img src=\"media/42-logo.png\" /></a>\r\n</p>"
+      }
+   }
+]
