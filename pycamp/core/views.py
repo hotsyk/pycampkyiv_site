@@ -84,7 +84,7 @@ def main_page(request):
         except:
             speakers.append((sp, sp_fields, None, None, None, None))
 
-    news = News.objects.filter(lang=lang, active=True).order_by('-added')
+    news = News.objects.filter(lang=lang, active=True).order_by('-added')[:15]
 
     context.update({
         'header': HeaderBlock.objects.filter(lang=lang)[0],

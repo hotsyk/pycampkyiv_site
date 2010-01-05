@@ -21,13 +21,14 @@
     {% endblock %}
 
 <script type='text/javascript' >
-{% for speaker in speakers %}
-    $(document).ready(function () {
+$(document).ready(function () {
+    {% for speaker in speakers %}
+
         $('#link{{speaker.0.pk}}').click(function (e) {
             e.preventDefault();
             $('#content{{speaker.0.pk}}').modal();
         });
- $('#name{{speaker.0.pk}}').click(function (e) {
+    $('#name{{speaker.0.pk}}').click(function (e) {
             e.preventDefault();
             $('#content{{speaker.0.pk}}').modal();
         });
@@ -35,8 +36,16 @@
             e.preventDefault();
             $('#presentationcontent{{speaker.0.pk}}').modal();
         });
-    });
-{% endfor %}
+    {% endfor %}
+    {% for obj in news %}
+
+        $('#news{{obj.pk}}').click(function (e) {
+            e.preventDefault();
+            $('#newscontent{{obj.pk}}').modal();
+            });
+    {% endfor %}
+});
+
 </script>
 </head>
 
@@ -76,11 +85,11 @@
     <div class="span-6">
         <h2>{{ news_title }}:</h2>
             {% for obj in news %}
-                <h4 style="background-color:#436B9C; color:#fff;font-size:14px;">{{ obj.title }} </h4>
-                {{ obj.added|date:"d/m/Y" }}
-                <br />
-                {{ obj.text }}
-                <br /><br />
+                <a href='#' id='news{{obj.pk}}' style="background-color:#436B9C;color:#fff;font-size:14px;padding-left:3px;padding-right:3px">{{ obj.title }} </a>
+                &nbsp;{{ obj.added|date:"d.m.Y" }}
+                <div id="newscontent{{obj.pk}}">
+                    {{ obj.text|safe|urlize }}
+                </div>
             {% endfor %}
     </div>
 
