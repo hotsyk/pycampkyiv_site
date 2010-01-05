@@ -115,10 +115,9 @@
                             </div>
                     </div>
                     <div class="span-6 last">
-                            {% if speaker.0.special %} <h4 style="background-color:#436B9C; color:#fff;font-size:14px;">{{ special_title }}</h4>{% endif %}
                             {% for field in speaker.1 %}
                                 {% if forloop.first %}
-                                <div class="present"><a href='#' id='name{{speaker.0.pk}}'>{{ field.value|urlize }}</a></div>
+                                <div class="present"><a href='#' id='name{{speaker.0.pk}}' {% if speaker.0.special %} style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px;"{% else %}style="background-color:#436B9C; color:#fff;font-size:14px;padding-left:3px;padding-right:3px;"{% endif %}>{{ field.value|urlize }}</a></div>
                                 {% endif %}
                             {% endfor %}
                                  {% if speaker.2 %}
