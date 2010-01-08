@@ -117,7 +117,7 @@ $(document).ready(function () {
                                     {% if speaker.0.site %} <a href="{{speaker.0.site}}">{{speaker.0.site}}</a><br />{% endif %}
                                 </p>
                             {% else %}
-                                    {{ field.value|urlize }} <br />
+                                    {{ field.value|safe|urlize }} <br />
                             {% endif %}
 
                         {% endfor %}
