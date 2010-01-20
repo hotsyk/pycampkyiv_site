@@ -54,6 +54,15 @@ $(document).ready(function () {
     <div class="container">
     <div style="text-align: right;" class="language_links">{{ langs|safe }}</div>
         <hr>
+    {% if flash_news %}
+    <div style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px; text-align:center;">
+        {% for obj in flash_news %}
+            {{ obj.text|safe|urlize }}
+        {% endfor %}
+    </div>
+    <br />
+    {% endif %}
+
         <div class="span-17">
             <div class="logo"><img src="{{MEDIA_URL}}pycamp-logo-new.png" /></div>
             <div class="logo_text">
@@ -61,7 +70,7 @@ $(document).ready(function () {
                 <h2>
                     {{ pycamp_date }}<br />
 
-                        <a target="_blank" href="http://maps.google.com/?ie=UTF8&hq=&hnear=Ki%C3%ABf,+Kyiv,+Ukraine&ll=50.4315,30.554105&spn=0.004142,0.01545&t=h&z=17">{{ pycamp_place }}</a>
+                        <a target="_blank" href="http://www.i-klass.com/rus/contacts/how">{{ pycamp_place }}</a>
                     <br />
 
                     <div class="registration">

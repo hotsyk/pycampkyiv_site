@@ -97,3 +97,4 @@ class News(models.Model):
     text = models.TextField(_('Value'), blank=True, null=True)
     added = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
+    is_flash = models.BooleanField(default=False)
