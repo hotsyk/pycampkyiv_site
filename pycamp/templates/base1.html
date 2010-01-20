@@ -54,14 +54,6 @@ $(document).ready(function () {
     <div class="container">
     <div style="text-align: right;" class="language_links">{{ langs|safe }}</div>
         <hr>
-    {% if flash_news %}
-    <div style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px; text-align:center;">
-        {% for obj in flash_news %}
-            {{ obj.text|safe|urlize }}
-        {% endfor %}
-    </div>
-    <br />
-    {% endif %}
 
         <div class="span-17">
             <div class="logo"><img src="{{MEDIA_URL}}pycamp-logo-new.png" /></div>
@@ -80,6 +72,15 @@ $(document).ready(function () {
                     {{ pycamp_tag }}: <a href="http://twitter.com/search?q=pykyiv%20OR%20pycamp">#pykyiv</a>
                 </h2>
             </div>
+             {% if flash_news %}
+             <br /><br />
+                <div style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px; text-align:center;">
+                    {% for obj in flash_news %}
+                        {{ obj.text|safe|urlize }}
+                    {% endfor %}
+                </div>
+            <br />
+            {% endif %}
 
         </div>
 
@@ -87,6 +88,7 @@ $(document).ready(function () {
             <p><a href="http://developers.org.ua"><img src="{{MEDIA_URL}}developers.png" /></a><br /><br />
                     <a href="http://42coffeecups.com"><img src="{{MEDIA_URL}}42-logo.png" /></a><br /><br />
                     <a href="http://www.ciklum.net/"><img src="{{MEDIA_URL}}ciklum.jpg" /></a><br /><br />
+                    <a href="http://www.globallogic.com.ua/"><img src="{{MEDIA_URL}}global.png" /></a><br /><br />
                     <a href="http://hyperhost.com.ua/"><img src="{{MEDIA_URL}}hyperhost.png" /></a>
 
             </p>
