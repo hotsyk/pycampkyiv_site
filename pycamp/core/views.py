@@ -84,7 +84,8 @@ def main_page(request):
         except:
             speakers.append((sp, sp_fields, None, None, None, None))
 
-    news = News.objects.filter(lang=lang, active=True).order_by('-added')[:15]
+    news = News.objects.filter(lang=lang, active=True,  is_flash=False).order_by('-added')[:15]
+    flash_news = News.objects.filter(lang=lang, active=True,  is_flash=True).order_by('-added')[:15]
 
     context.update({
         'header': HeaderBlock.objects.filter(lang=lang)[0],
@@ -101,6 +102,7 @@ def main_page(request):
         'news_title' : news_title,
         'twitter_title' : twitter_title,
         'special_title' : special_title,
+        'flash_news': flash_news, 
 
     })
     return render_to_response('core/appbase.html', context)
