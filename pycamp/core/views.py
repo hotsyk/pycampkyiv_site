@@ -24,7 +24,7 @@ def main_page(request):
         twitter_title = u'Twitter'
         special_title = u"Special guest"
         speak_title = u"Talk's title"
-        pycamp_date=u"2010, January 30, 10:00-19:00"
+        pycamp_date=u"2010, January 30, 09:00-19:00"
         pycamp_place =u"Mazepy str, 34, Kyiv, i-klass learning center"
         pycamp_registration = u"Registration"
         pycamp_contacts = u"Contacts"
@@ -35,7 +35,7 @@ def main_page(request):
         news_title = u'Новости'
         twitter_title = u'Твиттер'
         special_title = u"Специальный гость"
-        pycamp_date=u"30 января 2010, 10:00-19:00"
+        pycamp_date=u"30 января 2010, 09:00-19:00"
         pycamp_place =u"Киев, ул. Мазепы 34, учебный центр i-klass"
         pycamp_registration = u"Регистрация"
         pycamp_contacts = u"Контакты"
@@ -46,7 +46,7 @@ def main_page(request):
         news_title = u'Новини'
         twitter_title = u'Твіттер'
         special_title = u"Спеціальний гість"
-        pycamp_date=u"30 січня 2010, 10:00-19:00"
+        pycamp_date=u"30 січня 2010, 09:00-19:00"
         pycamp_place =u"Київ, вул. Мазепи 34, учбовий центр i-klass"
         pycamp_registration = u"Реєстрація"
         pycamp_contacts = u"Контакти"
@@ -102,7 +102,7 @@ def main_page(request):
         'news_title' : news_title,
         'twitter_title' : twitter_title,
         'special_title' : special_title,
-        'flash_news': flash_news, 
+        'flash_news': flash_news,
 
     })
     return render_to_response('core/appbase.html', context)

@@ -68,3 +68,7 @@ h3 {color:#5f87ae; font-size:1.6em; padding:0; margin:0;}
 #simplemodal-container a {color:#ddd;}
 #simplemodal-container a.modalCloseImg {background:url(/media/img/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
 #simplemodal-container #basic-modal-content {padding:8px;}
+
+td{
+    border-bottom:1px  solid #436B9C;
+    }
