@@ -219,7 +219,7 @@ def main_page(request):
     <td>18:00</td><td>18:30</td><td>Робота з платіжними системами в Django (PayPal, WebMoney).</td><td> Іван Моргун</td>
 </tr>
 <tr>
-    <td>18:30</td><td>18:50</td><td>PyCharm – нова python IDE від JetBrains </td><td> Дмитрj Жемеров</td>
+    <td>18:30</td><td>18:50</td><td>PyCharm – нова python IDE від JetBrains </td><td> Дмитро Жемеров</td>
 </tr>
          """
     langs = ""
