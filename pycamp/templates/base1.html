@@ -66,7 +66,8 @@ $(document).ready(function () {
                     <br />
 
                     <div class="registration">
-                        <a target="_blank" href="http://spreadsheets.google.com/viewform?hl=en&formkey=dDJjVEpST3hUdlhqLUlNaVl0YkJVemc6MA" style="font-size:34px;">{{ pycamp_registration }}&nbsp;&rarr;</a>
+                        {% comment %}<a target="_blank" href="http://spreadsheets.google.com/viewform?hl=en&formkey=dDJjVEpST3hUdlhqLUlNaVl0YkJVemc6MA" style="font-size:34px;">{{ pycamp_registration }}&nbsp;&rarr;</a>{% endcomment %}
+                        <span style="font-size:34px;">{{ pycamp_registration2 }}</span>
                     </div>
                     {{ pycamp_contacts }}: <a href="http://twitter.com/ua_python">@ua_python</a>, <a href="mailto:gotsyk@gmail.com">gotsyk@gmail.com</a><br />
                     {{ pycamp_tag }}: <a href="http://twitter.com/search?q=pykyiv%20OR%20pycamp">#pykyiv</a>
@@ -151,60 +152,7 @@ $(document).ready(function () {
 
     <div class="span-10">
         <table border=0 style="font-size:13px;padding-left:1px;padding-right:1px;width:360px;">
-<tr>
-   <td > 09:00</td><td>09:45</td><td colspan="2">Регистрация</td>
-</tr>
-<tr>
-    <td>09:45</td><td>10:10</td><td colspan="2">Вступительное слово</td>
-</tr>
-<tr>
-    <td>10:10</td><td>10:50</td><td>Почему Python - тормоз и как заставить его меньше тормозить.</td><td>   Александр Шигин</td>
-</tr>
-<tr>
-    <td>10:50</td><td>11:30</td><td>Рецепты декораторов</td><td>Юрий Юревич</td>
-</tr>
-<tr>
-    <td>11:30</td><td>11:50</td><td colspan="2">Кофе-брейк</td>
-</tr>
-<tr>
-    <td>11:50</td><td>12:10</td><td>Программирование на нервах</td><td>Дмитрий Кожевин</td>
-</tr>
-<tr>
-    <td>12:10</td><td>12:50</td><td>Работа с хранилищем данных в Google App Engine, отличия от реляционной модели.</td><td> Михаил Кашкин</td>
-</tr>
-<tr>
-    <td>12:50</td><td>13:20</td><td>    Redis: Дикий Запад баз данных   </td><td>Александр Соловьев</td>
-</tr>
-<tr>
-    <td>13:20</td><td>14:45</td><td colspan="2">Обед</td>
-</tr>
-<tr>
-    <td>14:45</td><td>15:30</td><td> Безопасная разработка ПО. Результат длинного пути и множества набитых шишек. </td><td>   Андрей Светлов</td>
-</tr>
-<tr>
-    <td>15:30</td><td>16:10</td><td>Расширение и встраивание Python</td><td> Владимир Пузанов, Владимир Кириллов</td>
-</tr>
-<tr>
-    <td>16:10</td><td>16:20</td><td colspan="2">Кофе-брейк  </td>
-</tr>
-<tr>
-    <td>16:20</td><td>16:50</td><td> Использование Python в ГИС </td><td> Андрей Мишковский</td>
-</tr>
-<tr>
-    <td>16:50</td><td>17:20</td><td>WebSockets в Twisted  </td><td>  Сергей Кириллов</td>
-</tr>
-<tr>
-    <td>17:20</td><td>17:30</td><td colspan="2"> Кофе-брейк  </td>
-</tr>
-<tr>
-    <td>17:30</td><td>18:00</td><td>Интернационализация и локализация Python-приложений с использованием gettext.  </td><td> Александр Бельченко</td>
-</tr>
-<tr>
-    <td>18:00</td><td>18:30</td><td> Работа с платежными системами в Django (PayPal, WebMoney). </td><td> Иван Моргун</td>
-</tr>
-<tr>
-    <td>18:30</td><td>18:50</td><td>PyCharm – новая python IDE от JetBrains </td><td> Дмитрий Жемеров</td>
-</tr>
+            {{ schedule|safe }}
         </table>
     </div>
 
