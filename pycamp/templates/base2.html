@@ -73,17 +73,21 @@ $(document).ready(function () {
                     {{ pycamp_tag }}: <a href="http://twitter.com/search?q=pykyiv%20OR%20pycamp">#pykyiv</a>
                 </h2>
             </div>
-             {% if flash_news %}
-             <br /><br />
-                <div style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px; text-align:center;">
+
+                <br /><br />
                    {% if video %}
+                   <div style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px; text-align:center;">
                         <a href="/live" style="color:#fff;font-size:24px;">Live video!</a>
-                   {% else %}
+                    </div>
+                    {% endif %}
+                    {% if flash_news %}
+                    <div style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px; text-align:center;">
                     {% for obj in flash_news %}
                         {{ obj.text|safe|urlize }}
                     {% endfor %}
+                    </div>
                     {% endif %}
-                </div>
+
             <br />
             {% endif %}
 
