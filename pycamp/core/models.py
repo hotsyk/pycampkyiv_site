@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 __all__ = ('Speaker',  'SpeakerField', 'Presentation', 'PresentationField', 'HeaderBlock',
-    'LANGUAGE_CHOICES', 'News')
+    'LANGUAGE_CHOICES', 'News', 'LiveSettings')
 
 class Speaker (models.Model):
     user = models.ForeignKey(User, blank=True, null=True)
@@ -98,3 +98,7 @@ class News(models.Model):
     added = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
     is_flash = models.BooleanField(default=False)
+
+class LiveSettings(models.Model):
+    title = models.CharField(max_length=255)
+    is_active = models.BooleanField(default=False)

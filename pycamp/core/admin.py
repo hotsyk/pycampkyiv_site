@@ -34,3 +34,4 @@ class HeaderAdmin(admin.ModelAdmin):
 admin.site.register(HeaderBlock, HeaderAdmin)
 
 admin.site.register(News)
+admin.site.register(LiveSettings)
