@@ -390,5 +390,8 @@ def live_video(request):
         'pycamp_registration2': pycamp_registration2,
         'video': video
     })
-    return render_to_response('core/video.html', context)
+    if video:
+        return render_to_response('core/video.html', context)
+    else:
+        return main_page(request)
 
