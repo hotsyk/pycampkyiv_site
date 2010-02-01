@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %} PyCamp Kyiv, 2010.01.30 {% endblock %}</title>
+
+  <!-- Blueprint CSS -->
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/print.css" type="text/css" media="print">
+  <!--[if IE]><link rel="stylesheet" href="{{MEDIA_URL}}blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+    <!-- Import fancy-type plugin for the sample page. -->
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+
+    <link type='text/css' href='{{MEDIA_URL}}css/basic.css' rel='stylesheet' media='screen' />
+    <script type='text/javascript' src='{{MEDIA_URL}}js/jquery.js'></script>
+    <script type='text/javascript' src='{{MEDIA_URL}}js/jquery.simplemodal.js'></script>
+
+{% block extended_head %}
+
+    {% endblock %}
+
+<script type='text/javascript' >
+$(document).ready(function () {
+    {% for speaker in speakers %}
+
+        $('#link{{speaker.0.pk}}').click(function (e) {
+            e.preventDefault();
+            $('#content{{speaker.0.pk}}').modal();
+        });
+    $('#name{{speaker.0.pk}}').click(function (e) {
+            e.preventDefault();
+            $('#content{{speaker.0.pk}}').modal();
+        });
+    $('#presentation{{speaker.0.pk}}').click(function (e) {
+            e.preventDefault();
+            $('#presentationcontent{{speaker.0.pk}}').modal();
+        });
+    {% endfor %}
+    {% for obj in news %}
+
+        $('#news{{obj.pk}}').click(function (e) {
+            e.preventDefault();
+            $('#newscontent{{obj.pk}}').modal();
+            });
+    {% endfor %}
+});
+
+</script>
+</head>
+
+<body>
+
+    <div class="container">
+    <div style="text-align: right;" class="language_links">{{ langs|safe }}</div>
+        <hr>
+
+        <div class="span-17">
+            <div class="logo"><img src="{{MEDIA_URL}}pycamp-logo-new.png" /></div>
+            <div class="logo_text">
+                <h1><a href="/" style="text-decoration:none; color:#436B9C">PyCamp Kyiv</a></h1>
+                <h2>
+                    {{ pycamp_date }}<br />
+
+                        <a target="_blank" href="http://www.i-klass.com/rus/contacts/how">{{ pycamp_place }}</a>
+                    <br />
+
+                    <div class="registration">
+                        <span style="font-size:24px;">{{ converence_over }}</span>
+                    </div>
+                    {{ pycamp_contacts }}: <a href="http://twitter.com/ua_python">@ua_python</a>, <a href="mailto:gotsyk@gmail.com">gotsyk@gmail.com</a><br />
+                    {{ pycamp_tag }}: <a href="http://twitter.com/search?q=pykyiv%20OR%20pycamp">#pykyiv</a>
+                </h2>
+            </div>
+
+                <br /><br />
+                   {% if video %}
+                   <div style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px; text-align:center;">
+                        <a href="/live" style="color:#fff;font-size:24px;">Live video!</a>
+                    </div>
+                    {% endif %}
+                    {% if flash_news %}
+                    <div style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px; text-align:center;">
+                    {% for obj in flash_news %}
+                        {{ obj.text|safe|urlize }}
+                    {% endfor %}
+                    </div>
+                    {% endif %}
+
+            <br />
+
+
+        </div>
+
+    <div class="span-7 last" align="center">
+            <p><a href="http://developers.org.ua"><img src="{{MEDIA_URL}}developers.png" /></a><br /><br />
+                    <a href="http://42coffeecups.com"><img src="{{MEDIA_URL}}42-logo.png" /></a><br /><br />
+                    <a href="http://www.ciklum.net/"><img src="{{MEDIA_URL}}ciklum.jpg" /></a><br /><br />
+                    <a href="http://www.globallogic.com.ua/"><img src="{{MEDIA_URL}}global.png" /></a><br /><br />
+                    <a href="http://hyperhost.com.ua/"><img src="{{MEDIA_URL}}hyperhost.png" /></a>
+
+            </p>
+    </div>
+     {% block left %}
+    <div class="span-9">
+
+    <h2>{{ speaker_title }}:</h2>
+                <p>
+                    {% for speaker in speakers %}
+                    <div class="span-9 last">
+                    <div class="span-3">
+                        <a href='#' id='link{{speaker.0.pk}}'><img src="{{MEDIA_URL}}{{speaker.0.photo}}" /></a>
+                        <br />
+                        {% for field in speaker.1 %}
+                            {% if forloop.first %}
+                            <div id="content{{speaker.0.pk}}">
+                                <h3>{{ field.value|urlize }} </h3>
+                                <br />
+                                 <div class="span-3">
+                                <img src="{{MEDIA_URL}}{{speaker.0.photo}}" align="left"/>
+                                </div>
+                                <div class="span-8 last">
+                                <p>
+                                    {% if speaker.0.twitter_name %} {{speaker.0.twitter_name|safe}}<br />{% endif %}
+                                    {% if speaker.0.blog %} <a href="{{speaker.0.blog}}">{{speaker.0.blog}}</a>&nbsp;{% endif %}
+                                    {% if speaker.0.site %} <a href="{{speaker.0.site}}">{{speaker.0.site}}</a><br />{% endif %}
+                                </p>
+                            {% else %}
+                                    {{ field.value|safe|urlize }} <br />
+                            {% endif %}
+
+                        {% endfor %}
+                                </div>
+                            </div>
+                    </div>
+                    <div class="span-6 last">
+                            {% for field in speaker.1 %}
+                                {% if forloop.first %}
+                                <div class="present"><a href='#' id='name{{speaker.0.pk}}' {% if speaker.0.special %} style="background-color:#b12c2c; color:#fff;font-size:14px;padding-left:3px;padding-right:3px;"{% else %}style="background-color:#436B9C; color:#fff;font-size:14px;padding-left:3px;padding-right:3px;"{% endif %}>{{ field.value|urlize }}</a></div>
+                                {% endif %}
+                            {% endfor %}
+                                 {% if speaker.2 %}
+                                    <div class="present"><a href="#" id='presentation{{speaker.0.pk}}'><span style="font-size:16px;">{{ speaker.3 }}</span></a></div><br />
+                                    <div id="presentationcontent{{speaker.0.pk}}">
+                                        <h3>{{ speaker.3 }} </h3>
+                                        <br />
+                                        {% if speaker.5 %}
+                                            <p>{{ speaker.5|safe|urlize }}</p>
+                                        {% endif %}
+                                        {% if speaker.4 %}
+                                            <p>{{ speaker.4|safe|urlize }}</p>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </p>
+
+    </div>
+ {% endblock left %}
+    {% block center %}
+    <div class="span-10">
+
+        <table border=0 style="font-size:13px;padding-left:1px;padding-right:1px;width:360px;">
+            {{ schedule|safe }}
+        </table>
+
+    </div>
+     {% endblock center %}
+{% block right %}
+        <div class="span-4 last">
+
+            <h2>{{ news_title }}:</h2>
+            {% for obj in news %}
+                <a href='#' id='news{{obj.pk}}' style="background-color:#436B9C;color:#fff;font-size:14px;padding-left:3px;padding-right:3px">{{ obj.title }} </a>
+                &nbsp;{{ obj.added|date:"d.m.Y" }}
+                <div id="newscontent{{obj.pk}}">
+                    {{ obj.text|safe|urlize }}
+                </div>
+                <hr />
+            {% endfor %}
+
+        <h2>{{ twitter_title }}:</h2>
+        {% block twitter %}
+          <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <script>
+                new TWTR.Widget({
+                  version: 2,
+                  type: 'search',
+                  search: 'pykyiv OR pycamp',
+                  interval: 6000,
+                  title: '#pykyiv',
+                  width: 210,
+                  height: 750,
+                  theme: {
+                    shell: {
+                      background: '#436B9C',
+                      color: '#ffffff'
+                    },
+                    tweets: {
+                      background: '#ffffff',
+                      color: '#444444',
+                      links: '#056087'
+                    }
+                  },
+                  features: {
+                    scrollbar: false,
+                    loop: true,
+                    live: true,
+                    hashtags: true,
+                    timestamp: true,
+                    avatars: true,
+                    behavior: 'default'
+                  }
+                }).render().start();
+                </script>
+            {% endblock twitter %}
+
+        </div>
+ {% endblock right %}
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-66492-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

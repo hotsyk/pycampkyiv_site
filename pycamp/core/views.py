@@ -30,6 +30,7 @@ def main_page(request):
         pycamp_contacts = u"Contacts"
         pycamp_tag = u"Hash tag"
         pycamp_registration2=u"Registration is closed"
+        converence_over =u"Conference is over. Stay tuned for the video and slides"
         schedule = u"""
 <tr>
    <td > 09:00</td><td>09:45</td><td colspan="2">Registration</td>
@@ -98,6 +99,7 @@ def main_page(request):
         pycamp_contacts = u"Контакты"
         pycamp_tag = u"Хеш тег"
         pycamp_registration2=u"Регистрация закрыта"
+        converence_over =u"Конференция завершена. Ждите видео"
         schedule = u"""
 <tr>
    <td > 09:00</td><td>09:45</td><td colspan="2">Регистрация</td>
@@ -166,6 +168,7 @@ def main_page(request):
         pycamp_contacts = u"Контакти"
         pycamp_tag = u"Хеш тег"
         pycamp_registration2=u"Реєстрацію припинено"
+        converence_over =u"Конференцію завершено. Очікуйте на відео"
         schedule = u"""
 <tr>
    <td > 09:00</td><td>09:45</td><td colspan="2">Реєстрація</td>
@@ -281,9 +284,10 @@ def main_page(request):
         'flash_news': flash_news,
         'pycamp_registration2': pycamp_registration2,
         'schedule': schedule,
-        'video': video
+        'video': video,
+        'converence_over':converence_over
     })
-    return render_to_response('core/appbase.html', context)
+    return render_to_response('core/feedback.html', context)
 
 def live_video(request):
 

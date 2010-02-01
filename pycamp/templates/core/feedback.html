@@ -1,0 +1,63 @@
+{% extends "base3.html" %}
+
+{% block left %}
+<div class="span-6">
+</div>
+{% endblock left %}
+
+{% block center %}
+<div class="span-18">
+<iframe src="https://spreadsheets.google.com/embeddedform?formkey=dEoxdEVreUlMVGxDMjdHSUhQMHNSYVE6MA" width="760" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe></div>
+{% endblock center %}
+
+{% block right %}
+        <div class="span-4 last">
+
+            <h2>{{ news_title }}:</h2>
+            {% for obj in news %}
+                <a href='#' id='news{{obj.pk}}' style="background-color:#436B9C;color:#fff;font-size:14px;padding-left:3px;padding-right:3px">{{ obj.title }} </a>
+                &nbsp;{{ obj.added|date:"d.m.Y" }}
+                <div id="newscontent{{obj.pk}}">
+                    {{ obj.text|safe|urlize }}
+                </div>
+                <hr />
+            {% endfor %}
+
+        <h2>{{ twitter_title }}:</h2>
+        {% block twitter %}
+          <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <script>
+                new TWTR.Widget({
+                  version: 2,
+                  type: 'search',
+                  search: 'pykyiv OR pycamp',
+                  interval: 6000,
+                  title: '#pykyiv',
+                  width: 210,
+                  height: 750,
+                  theme: {
+                    shell: {
+                      background: '#436B9C',
+                      color: '#ffffff'
+                    },
+                    tweets: {
+                      background: '#ffffff',
+                      color: '#444444',
+                      links: '#056087'
+                    }
+                  },
+                  features: {
+                    scrollbar: false,
+                    loop: true,
+                    live: true,
+                    hashtags: true,
+                    timestamp: true,
+                    avatars: true,
+                    behavior: 'default'
+                  }
+                }).render().start();
+                </script>
+            {% endblock twitter %}
+
+        </div>
+ {% endblock right %}
