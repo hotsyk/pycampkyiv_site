@@ -66,16 +66,19 @@ INSTALLED_APPS = (
 
 # Locale settings
 USE_I18N = True
-LANGUAGE_CODE = 'en'
+USE_L10N = True
+LANGUAGE_CODE = 'ru-ru'
 LANGUAGES = (
+    ('ru-ru', _('Russian')),
     ('en', _('English')),
+    ('uk-ua', _('Ukrainian')),
 )
 
 # Middleware settings
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',    
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
 )
 

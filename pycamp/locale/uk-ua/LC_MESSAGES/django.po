@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-07 18:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings.py:71
+msgid "Russian"
+msgstr "Русский"
+
+#: settings.py:72
+msgid "English"
+msgstr ""
+
+#: settings.py:73
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: core/models.py:12
+msgid "Email"
+msgstr ""
+
+#: core/models.py:13
+msgid "Site"
+msgstr ""
+
+#: core/models.py:14
+msgid "Blog"
+msgstr ""
+
+#: core/models.py:15
+msgid "Speaker twitter"
+msgstr ""
+
+#: core/models.py:16
+msgid "Photo"
+msgstr ""
+
+#: core/models.py:18
+msgid "Speaker's order"
+msgstr ""
+
+#: core/models.py:46 core/models.py:79 core/models.py:85 core/models.py:95
+msgid "Language"
+msgstr ""
+
+#: core/models.py:47 core/models.py:80
+msgid "Property"
+msgstr ""
+
+#: core/models.py:48 core/models.py:81 core/models.py:97
+msgid "Value"
+msgstr ""
+
+#: core/models.py:59
+msgid "Embedded Vide"
+msgstr ""
+
+#: core/models.py:60
+msgid "Embedded PDF"
+msgstr ""
+
+#: core/models.py:61
+msgid "Order"
+msgstr ""
+
+#: core/models.py:86
+msgid "Raw text"
+msgstr ""
+
+#: templates/base4.html:6
+msgid "Python conference in Kyiv, Ukraine"
+msgstr "Python конференція в Києві, Україна"
+
+#: templates/base4.html:46
+msgid "PyCamp Kyiv"
+msgstr "PyCamp Київ"
+
+#: templates/base4.html:47
+msgid ""
+"\n"
+"                <h2>\n"
+"                Біля 220 учасників з України, Росії та Белорусі  "
+"зустрілися в Києві, Україна на першій конференції PyCamp Київ  30-того "
+"січня, 2010\n"
+"                    <br />\n"
+"                    Контакти організаторів: <a href=\"http://twitter.com/"
+"ua_python\">@ua_python</a>, <a href=\"http://twitter.com/akhavr\">@akhavr</"
+"a>, \n"
+"                    <a href=\"http://twitter.com/gotsyk\">@gotsyk</a>, <a "
+"href=\"mailto:pykyiv@hotsyk.com\">pykyiv@hotsyk.com</a>\n"
+"                    <br />\n"
+"                    Хеш-тег в твітері: <a href=\"http://twitter.com/search?"
+"q=pykyiv%20OR%20pycamp\">#pykyiv</a><br />\n"
+"                    <a href=\"http://spreadsheets.google.com/viewform?"
+"hl=en&formkey=dEoxdEVreUlMVGxDMjdHSUhQMHNSYVE6MA\" style=\"font-size:26px;"
+"\">Залиште свій відгук&rarr;</a>\n"
+"                </h2>\n"
+"                "
+msgstr ""
+
+#: templates/base4.html:103
+msgid "Words from the organizers:"
+msgstr "Кілька слів від організаторів"
+
+#: templates/base4.html:107
+msgid "Comments from the participants:"
+msgstr "Коментарі відвідувачів"

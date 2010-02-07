@@ -7,6 +7,7 @@ from django.views.generic.simple import direct_to_template
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^i18n/', include('django.conf.urls.i18n')),
     (r'^', include('pycamp.core.urls')),
 
     #admin
