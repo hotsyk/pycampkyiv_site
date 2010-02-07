@@ -224,7 +224,7 @@ def presentation(request,  id=0):
             speaker = (sp, sp_fields, None, None, None, None)
     else:
         return main_page(request)
-     header = HeaderBlock.objects.filter(lang=lang)[0].text
+    header = HeaderBlock.objects.filter(lang=lang)[0].text
     context.update({
         'speaker': speaker,
          'header': header, 
