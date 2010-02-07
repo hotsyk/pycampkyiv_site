@@ -15,7 +15,7 @@
 
     <link type='text/css' href='{{MEDIA_URL}}css/basic.css' rel='stylesheet' media='screen' />
     <script type='text/javascript' src='{{MEDIA_URL}}js/jquery.js'></script>
-    <script type='text/javascript' src='{{MEDIA_URL}}js/jquery.simplemodal.js'></script>
+    {% comment %}<script type='text/javascript' src='{{MEDIA_URL}}js/jquery.simplemodal.js'></script> {% endcomment %}
 
 {% block extended_head %}
 
@@ -31,12 +31,23 @@ $(document).ready(function () {
 
 <body>
         <div class="container">
-       
+        <div class="span-17">
             <a href="http://developers.org.ua"><img src="{{MEDIA_URL}}developers.png" /></a>
                     <a href="http://42coffeecups.com"><img src="{{MEDIA_URL}}42-logo.png" /></a>
                     <a href="http://www.ciklum.net/"><img src="{{MEDIA_URL}}ciklum.jpg" /></a>
                     <a href="http://www.globallogic.com.ua/"><img src="{{MEDIA_URL}}global.png" /></a>
                     <a href="http://hyperhost.com.ua/"><img src="{{MEDIA_URL}}hyperhost.png" /></a>
+        </div>
+        <div class="span-7 last" align="center">
+            <form action="/i18n/setlang/" method="post">
+                <input name="next" type="hidden" value="{{ current_page }}" />
+                <select name="language" onchange='this.form.submit();'>
+                {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% ifequal lang.0 LANGUAGE_CODE %}selected="selected" {% endifequal%}>{{ lang.1 }}</option>
+                {% endfor %}
+                </select>
+                </form>
+        </div>
         </div>
     <hr />
     <div class="container">
@@ -44,17 +55,7 @@ $(document).ready(function () {
             <div class="logo"><img src="{{MEDIA_URL}}pycamp-logo-new.png" /></div>
             <div class="logo_text">
                 <h1><a href="/" style="text-decoration:none; color:#436B9C">{% trans "PyCamp Kyiv" %}</a></h1>
-                {% blocktrans %}
-                <h2>
-                About 220 participants from the Ukraine, Russia and Belarus  had met in Kyiv, Ukraine during the first PyCamp Kyiv conference on the 30th of January, 2010
-                    <br />
-                    Organizatiors' contacts: <a href="http://twitter.com/ua_python">@ua_python</a>, <a href="http://twitter.com/akhavr">@akhavr</a>, 
-                    <a href="http://twitter.com/gotsyk">@gotsyk</a>, <a href="mailto:pykyiv@hotsyk.com">pykyiv@hotsyk.com</a>
-                    <br />
-                    Tag in twitter: <a href="http://twitter.com/search?q=pykyiv%20OR%20pycamp">#pykyiv</a><br />
-                    <a href="http://spreadsheets.google.com/viewform?hl=en&formkey=dEoxdEVreUlMVGxDMjdHSUhQMHNSYVE6MA" style="font-size:26px;">Leave your feedback&rarr;</a>
-                </h2>
-                {% endblocktrans %}
+                    {{ header|safe }}
             </div>
 
         </div>
@@ -70,7 +71,7 @@ $(document).ready(function () {
                   interval: 6000,
                   title: '#pykyiv',
                   width: 210,
-                  height: 250,
+                  height: 270,
                   theme: {
                     shell: {
                       background: '#436B9C',
@@ -100,11 +101,11 @@ $(document).ready(function () {
          {% block content %}
  <div class="container">
          <div class="span-12">
-        <h2 style="color:#436B9C;">{% trans "Words from the organizers:" %}</h2>
+        <h2 style="color:#436B9C;">{{ org_words }}</h2>
         <object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/lhPV-Hk2JgI&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/lhPV-Hk2JgI&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
         </div>
         <div class="span-12 last">
-        <h2 style="color:#436B9C;">{% trans "Comments from the participants:" %}</h2>
+        <h2 style="color:#436B9C;">{{ participants_words }}</h2>
             <object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/iZ_zntFYPms&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/iZ_zntFYPms&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
         </div>
         <br />
