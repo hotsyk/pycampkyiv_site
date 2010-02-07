@@ -191,8 +191,11 @@ def live_video(request):
 def presentation(request,  id=0):
 
     context = RequestContext(request)
-    lang = request.LANGUAGE_CODE
 
+    cur_lang = request.LANGUAGE_CODE
+    for l in LANGUAGE_CHOICES:
+        if l[0] == cur_lang:
+            lang = l[2]
 
     speakers =  []
     if id:
