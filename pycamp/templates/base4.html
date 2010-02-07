@@ -46,7 +46,7 @@ $(document).ready(function () {
                 <h1><a href="/" style="text-decoration:none; color:#436B9C">{% trans "PyCamp Kyiv" %}</a></h1>
                 {% blocktrans %}
                 <h2>
-                About 220 participants from the Ukraine, Russia and Belarus  had met in Kyiv, Ukriane during the first PyCamp Kyiv conference on the 30th of January, 2010
+                About 220 participants from the Ukraine, Russia and Belarus  had met in Kyiv, Ukraine during the first PyCamp Kyiv conference on the 30th of January, 2010
                     <br />
                     Organizatiors' contacts: <a href="http://twitter.com/ua_python">@ua_python</a>, <a href="http://twitter.com/akhavr">@akhavr</a>, 
                     <a href="http://twitter.com/gotsyk">@gotsyk</a>, <a href="mailto:pykyiv@hotsyk.com">pykyiv@hotsyk.com</a>
@@ -110,15 +110,14 @@ $(document).ready(function () {
         <br />
         
         </div>
-    <hr />
    <div class="container">
         {% for speaker in speakers %}
-        <div class="span-11" style="width:465px;">
-             <a href='/presentation/{{speaker.0.pk}}'><h2>{{ speaker.3|urlize }} </h2></a>
-            <div class="span-2">
+        <div class="span-11" style="width:465px; border-top:solid 1px #436B9C;">
+             <a href='/presentation/{{speaker.0.pk}}' style="font-size:22px;color:#436B9C;">{{ speaker.3|urlize }} </a>
+            <div class="span-3">
                 <a href='/presentation/{{speaker.0.pk}}'><img src="{{MEDIA_URL}}{{speaker.0.photo}}" /></a>
             </div>
-            <div class="span-10">
+            <div class="span-8 last">
                         {% for field in speaker.1 %}
                             {% if forloop.first %}
                                 <a href='/presentation/{{speaker.0.pk}}'><h3>{{ field.value|urlize }} </h3></a>
