@@ -18,6 +18,7 @@ LANGUAGE_CHOICES = (
 def main_page(request):
     context = RequestContext(request)
     cur_lang = request.LANGUAGE_CODE
+    lang=2
     for l in LANGUAGE_CHOICES:
         if l[0] == cur_lang:
             lang = l[2]
@@ -193,6 +194,7 @@ def presentation(request,  id=0):
     context = RequestContext(request)
 
     cur_lang = request.LANGUAGE_CODE
+    lang=2
     for l in LANGUAGE_CHOICES:
         if l[0] == cur_lang:
             lang = l[2]
@@ -222,8 +224,9 @@ def presentation(request,  id=0):
             speaker = (sp, sp_fields, None, None, None, None)
     else:
         return main_page(request)
-
+     header = HeaderBlock.objects.filter(lang=lang)[0].text
     context.update({
         'speaker': speaker,
+         'header': header, 
     })
     return render_to_response('core/presentation.html', context)
