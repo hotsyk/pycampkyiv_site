@@ -56,10 +56,10 @@ class SpeakerField(models.Model):
 
 class Presentation(models.Model):
     speakers = models.ForeignKey(Speaker, blank=True, null=True)
-    time_start = models.TimeField(blank=True, null=True)
-    time_end = models.TimeField(blank=True, null=True)
-    file = models.FileField(_('Presentation file'), upload_to='.', blank=True, null=True)
-
+    embedded_video = models.TextField(_('Embedded Vide'), blank=True, null=True)
+    embedded_pdf = models.TextField(_('Embedded PDF'), blank=True, null=True)
+    order = models.IntegerField(_("Order"), default=100)
+    
     def __unicode__(self):
        return unicode(self.pk)
 

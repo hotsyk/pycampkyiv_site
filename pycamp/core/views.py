@@ -267,27 +267,17 @@ def main_page(request):
         video = False
 
     context.update({
-        'header': HeaderBlock.objects.filter(lang=lang)[0],
         'langs': langs,
-        'speaker_title': speaker_title,
-        'speak_title': speak_title,
         'speakers': speakers,
         'news': news,
-        'pycamp_date': pycamp_date,
-        'pycamp_place': pycamp_place,
-        'pycamp_registration': pycamp_registration,
-        'pycamp_contacts': pycamp_contacts,
-        'pycamp_tag': pycamp_tag,
-        'news_title' : news_title,
-        'twitter_title' : twitter_title,
-        'special_title' : special_title,
         'flash_news': flash_news,
         'pycamp_registration2': pycamp_registration2,
         'schedule': schedule,
         'video': video,
-        'converence_over':converence_over
+        'converence_over':converence_over, 
+               'presentations': Presentation.objects.all()
     })
-    return render_to_response('core/feedback.html', context)
+    return render_to_response('core/main-post.html', context)
 
 def live_video(request):
 
@@ -348,6 +338,7 @@ def live_video(request):
                 langs += lang_corr
 
     speakers =  []
+    
     for sp in Speaker.objects.filter(related_speaker=None).order_by('order', 'pk'):
         sp_fields = SpeakerField.objects.filter(speaker=sp, lang=int(lang)).order_by('property_name')
         try:
@@ -364,7 +355,7 @@ def live_video(request):
                     property_name=3)[0].value
             except:
                 presentation_level = None
-
+        
             speakers.append((sp, sp_fields, presentation, presentation_title, presentation_description,
                                         presentation_level ))
         except:
@@ -392,10 +383,62 @@ def live_video(request):
         'twitter_title' : twitter_title,
         'special_title' : special_title,
         'pycamp_registration2': pycamp_registration2,
-        'video': video
+        'video': video, 
+  
     })
     if video:
         return render_to_response('core/video.html', context)
     else:
         return main_page(request)
 
+
+def presentation(request,  id=0):
+
+    context = RequestContext(request)
+    if request.method == 'GET':
+        lang = request.GET.get('lang', None)
+    speaker_title = ''
+
+    if lang is None:
+        lang =2
+
+   
+    langs = ""
+    for l in LANGUAGE_CHOICES:
+        if not int(lang) == l[0]:
+            lang_corr = " <a href='/?lang=%d'>%s</a>" % (l[0], l[1])
+            if not langs == "":
+                langs += " | " + lang_corr
+            else:
+                langs += lang_corr
+
+    speakers =  []
+    if id:
+        sp = Speaker.objects.filter(pk=id)[0]
+        sp_fields = SpeakerField.objects.filter(speaker=sp, lang=int(lang)).order_by('property_name')
+        try:
+            presentation = Presentation.objects.filter(speakers=sp)[0]
+            presentation_title = PresentationField.objects.filter(presentation=presentation, lang=int(lang),
+                property_name=1)[0].value
+            try:
+                presentation_description = PresentationField.objects.filter(presentation=presentation, lang=int(lang),
+                    property_name=2)[0].value
+            except:
+                presentation_description = None
+            try:
+                presentation_level = PresentationField.objects.filter(presentation=presentation, lang=int(lang),
+                    property_name=3)[0].value
+            except:
+                presentation_level = None
+        
+            speaker = (sp, sp_fields, presentation, presentation_title, presentation_description,
+                                        presentation_level )
+        except:
+            speaker = (sp, sp_fields, None, None, None, None)
+    else:
+        return main_page(request)
+
+    context.update({
+        'speaker': speaker,
+    })
+    return render_to_response('core/presentation.html', context)

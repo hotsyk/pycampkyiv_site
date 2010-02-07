@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %} PyCamp Kyiv - {% trans "Python conference in Kyiv, Ukraine" %} {% endblock %}</title>
+
+  <!-- Blueprint CSS -->
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/print.css" type="text/css" media="print">
+  <!--[if IE]><link rel="stylesheet" href="{{MEDIA_URL}}blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+    <!-- Import fancy-type plugin for the sample page. -->
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+
+    <link type='text/css' href='{{MEDIA_URL}}css/basic.css' rel='stylesheet' media='screen' />
+    <script type='text/javascript' src='{{MEDIA_URL}}js/jquery.js'></script>
+    <script type='text/javascript' src='{{MEDIA_URL}}js/jquery.simplemodal.js'></script>
+
+{% block extended_head %}
+
+    {% endblock %}
+
+<script type='text/javascript' >
+$(document).ready(function () {
+  
+});
+
+</script>
+</head>
+
+<body>
+        <div class="container">
+       
+            <a href="http://developers.org.ua"><img src="{{MEDIA_URL}}developers.png" /></a>
+                    <a href="http://42coffeecups.com"><img src="{{MEDIA_URL}}42-logo.png" /></a>
+                    <a href="http://www.ciklum.net/"><img src="{{MEDIA_URL}}ciklum.jpg" /></a>
+                    <a href="http://www.globallogic.com.ua/"><img src="{{MEDIA_URL}}global.png" /></a>
+                    <a href="http://hyperhost.com.ua/"><img src="{{MEDIA_URL}}hyperhost.png" /></a>
+        </div>
+    <hr />
+    <div class="container">
+        <div class="span-17">
+            <div class="logo"><img src="{{MEDIA_URL}}pycamp-logo-new.png" /></div>
+            <div class="logo_text">
+                <h1><a href="/" style="text-decoration:none; color:#436B9C">{% trans "PyCamp Kyiv" %}</a></h1>
+                {% blocktrans %}
+                <h2>
+                About 220 participants from the Ukraine, Russia and Belarus  had met in Kyiv, Ukriane during the first PyCamp Kyiv conference on the 30th of January, 2010
+                    <br />
+                    Organizatiors' contacts: <a href="http://twitter.com/ua_python">@ua_python</a>, <a href="http://twitter.com/akhavr">@akhavr</a>, 
+                    <a href="http://twitter.com/gotsyk">@gotsyk</a>, <a href="mailto:pykyiv@hotsyk.com">pykyiv@hotsyk.com</a>
+                    <br />
+                    Tag in twitter: <a href="http://twitter.com/search?q=pykyiv%20OR%20pycamp">#pykyiv</a><br />
+                    <a href="http://spreadsheets.google.com/viewform?hl=en&formkey=dEoxdEVreUlMVGxDMjdHSUhQMHNSYVE6MA" style="font-size:26px;">Leave your feedback&rarr;</a>
+                </h2>
+                {% endblocktrans %}
+            </div>
+
+        </div>
+
+    <div class="span-7 last" align="center">
+        {% block twitter %}
+          <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <script>
+                new TWTR.Widget({
+                  version: 2,
+                  type: 'search',
+                  search: 'pykyiv OR pycamp',
+                  interval: 6000,
+                  title: '#pykyiv',
+                  width: 210,
+                  height: 250,
+                  theme: {
+                    shell: {
+                      background: '#436B9C',
+                      color: '#ffffff'
+                    },
+                    tweets: {
+                      background: '#ffffff',
+                      color: '#444444',
+                      links: '#056087'
+                    }
+                  },
+                  features: {
+                    scrollbar: false,
+                    loop: true,
+                    live: true,
+                    hashtags: true,
+                    timestamp: true,
+                    avatars: true,
+                    behavior: 'default'
+                  }
+                }).render().start();
+                </script>
+            {% endblock twitter %}
+
+        </div>    
+         <hr />
+         {% block content %}
+ <div class="container">
+         <div class="span-12">
+        <h2 style="color:#436B9C;">{% trans "Words from the organizers:" %}</h2>
+        <object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/lhPV-Hk2JgI&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/lhPV-Hk2JgI&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
+        </div>
+        <div class="span-12 last">
+        <h2 style="color:#436B9C;">{% trans "Comments from the participants:" %}</h2>
+            <object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/iZ_zntFYPms&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/iZ_zntFYPms&hl=en_US&fs=1&rel=0&color1=0x006699&color2=0x54abd6&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
+        </div>
+        <br />
+        
+        </div>
+    <hr />
+   <div class="container">
+        {% for speaker in speakers %}
+        <div class="span-11" style="width:465px;">
+             <a href='/presentation/{{speaker.0.pk}}'><h2>{{ speaker.3|urlize }} </h2></a>
+            <div class="span-2">
+                <a href='/presentation/{{speaker.0.pk}}'><img src="{{MEDIA_URL}}{{speaker.0.photo}}" /></a>
+            </div>
+            <div class="span-10">
+                        {% for field in speaker.1 %}
+                            {% if forloop.first %}
+                                <a href='/presentation/{{speaker.0.pk}}'><h3>{{ field.value|urlize }} </h3></a>
+                                    {% if speaker.0.twitter_name %} {{speaker.0.twitter_name|safe}}<br />{% endif %}
+                                    {% if speaker.0.blog %} <a href="{{speaker.0.blog}}">{{speaker.0.blog}}</a>&nbsp;{% endif %}
+                                    {% if speaker.0.site %} <a href="{{speaker.0.site}}">{{speaker.0.site}}</a><br />{% endif %}
+                            {% else %}
+                                    {{ field.value|safe|urlize }} <br />
+                            {% endif %}
+
+                        {% endfor %}
+             </div>
+         </div>
+        {% endfor %}
+    </div>
+   {% endblock %}
+   
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-66492-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
