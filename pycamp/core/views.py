@@ -14,7 +14,30 @@ LANGUAGE_CHOICES = (
     ('uk-ua', u'українська',  3),
     )
 
-
+def intern(lang):
+    if lang==1:
+            org_words = u"Words from the organizers:"
+            participants_words =u"Comments from the participants:"
+            video_menu = u"Video from the conference"
+            presentation_menu = u"Presentations from the conference"
+    elif lang==2:
+            org_words = u"Несколько слов от организаторов:"
+            participants_words =u"Комментарии участников:"        
+            video_menu = u"Видео докладов"
+            presentation_menu = u"Презентации"
+    elif lang==3:
+            org_words = u"Кілька слів від організаторів:"
+            participants_words =u"Коментарі відвідувачів:"        
+            video_menu = u"Відео доповідей"
+            presentation_menu = u"Презентації"
+    else:
+            org_words = u"Words from the organizers:"
+            participants_words =u"Comments from the participants:"        
+            video_menu = u"Video from the conference"
+            presentation_menu = u"Presentations from the conference"
+        
+    return  org_words,  participants_words,  video_menu,  presentation_menu
+    
 def main_page(request):
     context = RequestContext(request)
     cur_lang = request.LANGUAGE_CODE
@@ -54,140 +77,17 @@ def main_page(request):
         video = video[0].is_active
     else:
         video = False
-    if lang==1:
-            org_words = u"Words from the organizers:"
-            participants_words =u"Comments from the participants:"
-    elif lang==2:
-            org_words = u"Несколько слов от организаторов:"
-            participants_words =u"Комментарии участников:"        
-    elif lang==3:
-            org_words = u"Кілька слів від організаторів:"
-            participants_words =u"Коментарі відвідувачів:"        
-    else:
-            org_words = u"Words from the organizers:"
-            participants_words =u"Comments from the participants:"        
-        
+    org_words,  participants_words,  video_menu,  presentation_menu = intern(lang)
     context.update({
         'speakers': speakers,
         'header': header, 
          'presentations': Presentation.objects.all(), 
          'org_words': org_words, 
-         'participants_words': participants_words
+         'participants_words': participants_words, 
+         'video_menu': video_menu, 
+         'presentation_menu': presentation_menu
     })
     return render_to_response('core/main-post.html', context)
-
-def live_video(request):
-
-    context = RequestContext(request)
-    if request.method == 'GET':
-        lang = request.GET.get('lang', None)
-    speaker_title = ''
-
-    if lang is None:
-        lang =2
-
-    if int(lang) == 1:
-        speaker_title = u'Speakers'
-        news_title = u'News'
-        twitter_title = u'Twitter'
-        special_title = u"Special guest"
-        speak_title = u"Talk's title"
-        pycamp_date=u"2010, January 30, 09:00-19:00"
-        pycamp_place =u"Mazepy str, 34, Kyiv, i-klass learning center"
-        pycamp_registration = u"Registration"
-        pycamp_contacts = u"Contacts"
-        pycamp_tag = u"Hash tag"
-        pycamp_registration2=u"Registration is closed"
-
-    elif int(lang) == 2:
-        speaker_title = u'Докладчики'
-        speak_title = u"Тема доклада"
-        news_title = u'Новости'
-        twitter_title = u'Твиттер'
-        special_title = u"Специальный гость"
-        pycamp_date=u"30 января 2010, 09:00-19:00"
-        pycamp_place =u"Киев, ул. Мазепы 34, учебный центр i-klass"
-        pycamp_registration = u"Регистрация"
-        pycamp_contacts = u"Контакты"
-        pycamp_tag = u"Хеш тег"
-        pycamp_registration2=u"Регистрация закрыта"
-
-    else:
-        speaker_title = u'Доповідачі'
-        speak_title = u"Тема доповіді"
-        news_title = u'Новини'
-        twitter_title = u'Твіттер'
-        special_title = u"Спеціальний гість"
-        pycamp_date=u"30 січня 2010, 09:00-19:00"
-        pycamp_place =u"Київ, вул. Мазепи 34, учбовий центр i-klass"
-        pycamp_registration = u"Реєстрація"
-        pycamp_contacts = u"Контакти"
-        pycamp_tag = u"Хеш тег"
-        pycamp_registration2=u"Реєстрацію припинено"
-
-    langs = ""
-    for l in LANGUAGE_CHOICES:
-        if not int(lang) == l[0]:
-            lang_corr = " <a href='/?lang=%d'>%s</a>" % (l[0], l[1])
-            if not langs == "":
-                langs += " | " + lang_corr
-            else:
-                langs += lang_corr
-
-    speakers =  []
-    
-    for sp in Speaker.objects.filter(related_speaker=None).order_by('order', 'pk'):
-        sp_fields = SpeakerField.objects.filter(speaker=sp, lang=int(lang)).order_by('property_name')
-        try:
-            presentation = Presentation.objects.filter(speakers=sp)[0]
-            presentation_title = PresentationField.objects.filter(presentation=presentation, lang=int(lang),
-                property_name=1)[0].value
-            try:
-                presentation_description = PresentationField.objects.filter(presentation=presentation, lang=int(lang),
-                    property_name=2)[0].value
-            except:
-                presentation_description = None
-            try:
-                presentation_level = PresentationField.objects.filter(presentation=presentation, lang=int(lang),
-                    property_name=3)[0].value
-            except:
-                presentation_level = None
-        
-            speakers.append((sp, sp_fields, presentation, presentation_title, presentation_description,
-                                        presentation_level ))
-        except:
-            speakers.append((sp, sp_fields, None, None, None, None))
-
-    video = LiveSettings.objects.filter(title='video')
-    if len(video) > 0:
-        video = video[0].is_active
-    else:
-        video = False
-
-    context.update({
-        'header': HeaderBlock.objects.filter(lang=lang)[0],
-        'langs': langs,
-        'speaker_title': speaker_title,
-        'speak_title': speak_title,
-        'speakers': speakers,
-
-        'pycamp_date': pycamp_date,
-        'pycamp_place': pycamp_place,
-        'pycamp_registration': pycamp_registration,
-        'pycamp_contacts': pycamp_contacts,
-        'pycamp_tag': pycamp_tag,
-        'news_title' : news_title,
-        'twitter_title' : twitter_title,
-        'special_title' : special_title,
-        'pycamp_registration2': pycamp_registration2,
-        'video': video, 
-  
-    })
-    if video:
-        return render_to_response('core/video.html', context)
-    else:
-        return main_page(request)
-
 
 def presentation(request,  id=0):
 
@@ -225,8 +125,73 @@ def presentation(request,  id=0):
     else:
         return main_page(request)
     header = HeaderBlock.objects.filter(lang=lang)[0].text
+    org_words,  participants_words,  video_menu,  presentation_menu = intern(lang)
+    
     context.update({
         'speaker': speaker,
          'header': header, 
+         'org_words': org_words, 
+         'participants_words': participants_words, 
+         'video_menu': video_menu, 
+         'presentation_menu': presentation_menu         
     })
     return render_to_response('core/presentation.html', context)
+
+def videos(request):
+
+    context = RequestContext(request)
+
+    cur_lang = request.LANGUAGE_CODE
+    lang=2
+    for l in LANGUAGE_CHOICES:
+        if l[0] == cur_lang:
+            lang = l[2]
+    videos = []
+    for video in Presentation.objects.exclude(embedded_video="").exclude(embedded_video=None):
+        speaker_name = SpeakerField.objects.filter(speaker=video.speakers, lang=int(lang),  property_name=1)[0].value
+        presentation_name = PresentationField.objects.filter(presentation=video,  lang=int(lang),  property_name=1)[0].value
+        videos.append((video.embedded_video,  speaker_name,  presentation_name))
+
+    header = HeaderBlock.objects.filter(lang=lang)[0].text
+    org_words,  participants_words,  video_menu,  presentation_menu = intern(lang)
+    
+    context.update({
+        'videos':videos, 
+         'header': header, 
+         'org_words': org_words, 
+         'participants_words': participants_words, 
+         'video_menu': video_menu, 
+         'presentation_menu': presentation_menu , 
+         
+    })
+    return render_to_response('core/videos.html', context)
+    
+def presentations(request):
+
+    context = RequestContext(request)
+
+    cur_lang = request.LANGUAGE_CODE
+    lang=2
+    for l in LANGUAGE_CHOICES:
+        if l[0] == cur_lang:
+            lang = l[2]
+
+    presentations = []
+    for presentation in Presentation.objects.exclude(embedded_pdf="").exclude(embedded_pdf=None):
+        speaker_name = SpeakerField.objects.filter(speaker=presentation.speakers, lang=int(lang),  property_name=1)[0].value
+        presentation_name = PresentationField.objects.filter(presentation=presentation,  lang=int(lang),  property_name=1)[0].value
+        presentations.append((presentation.embedded_pdf,   speaker_name,  presentation_name))
+
+    header = HeaderBlock.objects.filter(lang=lang)[0].text
+    org_words,  participants_words,  video_menu,  presentation_menu = intern(lang)
+    
+    context.update({
+        'presentations':presentations, 
+         'header': header, 
+         'org_words': org_words, 
+         'participants_words': participants_words, 
+         'video_menu': video_menu, 
+         'presentation_menu': presentation_menu , 
+         
+    })
+    return render_to_response('core/presentations.html', context)    

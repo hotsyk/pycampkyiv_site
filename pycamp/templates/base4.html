@@ -50,12 +50,17 @@ $(document).ready(function () {
         </div>
         </div>
     <hr />
+ 
     <div class="container">
-        <div class="span-17">
-            <div class="logo"><img src="{{MEDIA_URL}}pycamp-logo-new.png" /></div>
+        <div class="span-17" >
+            <div class="logo" >
+                <img src="{{MEDIA_URL}}pycamp-logo-new.png" />
+            </div>
             <div class="logo_text">
                 <h1><a href="/" style="text-decoration:none; color:#436B9C">{% trans "PyCamp Kyiv" %}</a></h1>
                     {{ header|safe }}
+                    <a href="/videos" style="font-size:18px;color:#436B9C;">{{ video_menu }}&rarr;</a>&nbsp;
+                    <a href="/presentations" style="font-size:18px;color:#436B9C;">{{ presentation_menu }}&rarr;</a><br />
             </div>
 
         </div>
@@ -97,7 +102,9 @@ $(document).ready(function () {
             {% endblock twitter %}
 
         </div>    
-         <hr />
+        <hr />
+         </div> 
+        
          {% block content %}
  <div class="container">
          <div class="span-12">

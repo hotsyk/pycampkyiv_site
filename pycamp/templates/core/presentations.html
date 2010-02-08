@@ -1,0 +1,18 @@
+{% extends "base4.html" %}
+{% load i18n %}
+  {% block content %}
+    
+      <div class="container">
+            <div class="span-20 last" align="center">
+                        {% for presentation in presentations %}
+                    <div class="span-24 last" align="center">
+                        <br />
+                        <h3>
+                            {{ presentation.1 }} <br />{{ presentation.2 }}
+                        </h3>
+                       <br />
+                        {{ presentation.0|safe }}
+                       <hr />
+                    </div>
+                    {% endfor %}            
+  {% endblock %}
