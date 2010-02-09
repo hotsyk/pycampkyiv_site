@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %} PyCamp Kyiv - {% trans "Python conference in Kyiv, Ukraine" %} {% endblock %}</title>
+
+  <!-- Blueprint CSS -->
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/print.css" type="text/css" media="print">
+  <!--[if IE]><link rel="stylesheet" href="{{MEDIA_URL}}blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+    <!-- Import fancy-type plugin for the sample page. -->
+    <link rel="stylesheet" href="{{MEDIA_URL}}blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+
+    <link type='text/css' href='{{MEDIA_URL}}css/basic.css' rel='stylesheet' media='screen' />
+    <script type='text/javascript' src='{{MEDIA_URL}}js/jquery.js'></script>
+    {% comment %}<script type='text/javascript' src='{{MEDIA_URL}}js/jquery.simplemodal.js'></script> {% endcomment %}
+
+{% block extended_head %}
+
+    {% endblock %}
+
+<script type='text/javascript' >
+$(document).ready(function () {
+  
+});
+
+</script>
+</head>
+
+<body>
+        <div class="container">
+        <div class="span-17">
+            <a href="http://developers.org.ua"><img src="{{MEDIA_URL}}developers.png" /></a>
+                    <a href="http://42coffeecups.com"><img src="{{MEDIA_URL}}42-logo.png" /></a>
+                    <a href="http://www.ciklum.net/"><img src="{{MEDIA_URL}}ciklum.jpg" /></a>
+                    <a href="http://www.globallogic.com.ua/"><img src="{{MEDIA_URL}}global.png" /></a>
+                    <a href="http://hyperhost.com.ua/"><img src="{{MEDIA_URL}}hyperhost.png" /></a>
+        </div>
+        <div class="span-7 last" align="center">
+            <form action="/i18n/setlang/" method="post">
+                <input name="next" type="hidden" value="{{ current_page }}" />
+                <select name="language" onchange='this.form.submit();'>
+                {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% ifequal lang.0 LANGUAGE_CODE %}selected="selected" {% endifequal%}>{{ lang.1 }}</option>
+                {% endfor %}
+                </select>
+                </form>
+        </div>
+        </div>
+    <hr />
+ 
+    <div class="container">
+        <div class="span-17" >
+            <div class="logo" >
+                <a href="/"><img src="{{MEDIA_URL}}pycamp-logo-new.png" /></a>
+            </div>
+            <div class="logo_text">
+                <h1><a href="/" style="text-decoration:none; color:#436B9C">404</a></h1>
+            </div>
+
+        </div>
+
+         {% block content %}
+ <div class="container">
+        <div class="span-24 last">
+        <h2 style="color:#436B9C;">404: Page not found</h2>
+        </div>
+   
+
+   {% endblock %}
+   
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-66492-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
